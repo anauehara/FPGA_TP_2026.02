@@ -1,0 +1,271 @@
+// =====================================================================
+//  telecran — block diagram (macro level: write path, memory, HDMI timing)
+//  Language: Graphviz DOT (fixed positions, layout = neato)
+//  View/edit: https://dreampuf.github.io/GraphvizOnline  or  https://edotor.net
+//
+//  Every node has a fixed position (pos="x,y!", in points), so every wire
+//  is a straight horizontal line or a clean 90° corner.
+//  Yellow hexagons are named signals (s_clk_27, s_rst_n, ...): a tag with
+//  the same name means the same wire, so long wires are not drawn.
+// =====================================================================
+digraph telecran {
+    layout=neato;
+    inputscale=72;          // pos values are in points
+    splines=line;
+    overlap=true;
+    outputorder=nodesfirst; // wires are drawn on top of the blocks
+    bgcolor="white";
+    node [fontname="Helvetica", fixedsize=true];
+    edge [fontname="Helvetica", color="#475569", arrowsize=0.7, penwidth=1.3];
+
+    // ------------------------------------------------------------------
+    // Groups (backgrounds)
+    // ------------------------------------------------------------------
+    g_pins [shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#cbd5e1", penwidth=1.2, label="", width=2.083, height=8.333, pos="90,770!"];
+    g_pins_t [shape=plaintext, width=1.806, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="130"><tr><td align="left"><font point-size="12"><b>Board pins</b></font></td></tr></table>>, pos="90,1056!"];
+    g_top [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#334155", penwidth=1.2, label="", width=27.917, height=15.347, pos="1195,568!", penwidth=1.8];
+    g_top_t [shape=plaintext, width=27.639, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="1990"><tr><td align="left"><font point-size="14"><b>telecran</b></font></td></tr></table>>, pos="1195,1106!"];
+    g_top_sub [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<h_res = 720 · v_res = 480>, pos="320,1105!"];
+    g_clk [shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#cbd5e1", penwidth=1.2, label="", width=9.722, height=2.153, pos="555,1008!"];
+    g_clk_t [shape=plaintext, width=9.444, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="680"><tr><td align="left"><font point-size="12"><b>Clock &amp; reset</b></font></td></tr></table>>, pos="555,1071!"];
+    g_enc [shape=box, style="rounded,filled", fillcolor="#fef2f2", color="#fca5a5", penwidth=1.2, label="", width=4.861, height=4.583, pos="380,750!"];
+    g_enc_t [shape=plaintext, width=4.583, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="330"><tr><td align="left"><font point-size="12"><b>Encoders</b></font></td></tr></table>>, pos="380,901!"];
+    g_wr [shape=box, style="rounded,filled", fillcolor="#fff7ed", color="#fdba74", penwidth=1.2, label="", width=4.722, height=7.500, pos="735,645!"];
+    g_wr_t [shape=plaintext, width=4.444, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="320"><tr><td align="left"><font point-size="12"><b>Memory write</b></font></td></tr></table>>, pos="735,901!"];
+    g_mux [shape=box, style="rounded,filled", fillcolor="#f5f3ff", color="#c4b5fd", penwidth=1.2, label="", width=6.597, height=7.500, pos="1158,645!"];
+    g_mux_t [shape=plaintext, width=6.319, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="455"><tr><td align="left"><font point-size="12"><b>Port A select &amp; register</b></font></td></tr></table>>, pos="1158,901!"];
+    g_mem [shape=box, style="rounded,filled", fillcolor="#f0fdf4", color="#86efac", penwidth=1.2, label="", width=6.736, height=5.069, pos="1642,588!"];
+    g_mem_t [shape=plaintext, width=6.458, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="465"><tr><td align="left"><font point-size="12"><b>Memory</b></font></td></tr></table>>, pos="1642,756!"];
+
+    // ------------------------------------------------------------------
+    // Board pins
+    // ------------------------------------------------------------------
+    pin_clk [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_clk_50", pos="90,1020!"];
+    pin_rst [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_rst_n (KEY0)", pos="90,985!"];
+    pin_lca [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_left_ch_a", pos="90,855!"];
+    pin_lcb [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_left_ch_b", pos="90,829!"];
+    pin_rca [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_right_ch_a", pos="90,700!"];
+    pin_rcb [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_right_ch_b", pos="90,674!"];
+    pin_lpb [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.806, height=0.306, fontsize=10, label="i_left_pb (active low)", pos="90,510!"];
+
+    // ------------------------------------------------------------------
+    // Clock & reset
+    // ------------------------------------------------------------------
+    pll0 [shape=box, style="filled", fillcolor="#dbeafe", color="#3b82f6", penwidth=2, label="", width=2.778, height=1.639, pos="440,1001!"];
+    pll0_t [shape=plaintext, width=2.556, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="184"><tr><td align="left"><font point-size="11"><b>pll0</b> : pll</font></td></tr></table>>, pos="440,1047!"];
+    pll_refclk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<refclk>, pos="388,1020!"];
+    pll_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<rst>, pos="388,985!"];
+    pll_clk27 [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<outclk_0>, pos="492,1020!"];
+    pll_locked [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<locked>, pos="492,985!"];
+    pll_note [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<50 MHz → 27 MHz>, pos="440,954!"];
+    net_clk [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.389, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="680,1020!"];
+    net_rst [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.389, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="680,985!"];
+    l_not [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<not>, pos="250,994!"];
+
+    // ------------------------------------------------------------------
+    // Encoders
+    // ------------------------------------------------------------------
+    enc_x [shape=box, style="filled", fillcolor="#fee2e2", color="#dc2626", penwidth=2, label="", width=2.778, height=1.875, pos="440,828!"];
+    enc_x_t [shape=plaintext, width=2.556, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="184"><tr><td align="left"><font point-size="11"><b>enc_x</b> : encoder</font></td></tr></table>>, pos="440,882!"];
+    encx_a [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_a>, pos="388,855!"];
+    encx_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_b>, pos="388,829!"];
+    encx_pos [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<o_position>, pos="492,842!"];
+    encx_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="388,803!"];
+    encx_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="388,777!"];
+    encx_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="270,803!"];
+    encx_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="270,777!"];
+    enc_y [shape=box, style="filled", fillcolor="#fee2e2", color="#dc2626", penwidth=2, label="", width=2.778, height=1.875, pos="440,672!"];
+    enc_y_t [shape=plaintext, width=2.556, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="184"><tr><td align="left"><font point-size="11"><b>enc_y</b> : encoder</font></td></tr></table>>, pos="440,727!"];
+    ency_a [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_a>, pos="388,700!"];
+    ency_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_b>, pos="388,674!"];
+    ency_pos [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<o_position>, pos="492,687!"];
+    ency_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="388,648!"];
+    ency_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="388,622!"];
+    ency_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="270,648!"];
+    ency_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="270,622!"];
+
+    // ------------------------------------------------------------------
+    // Memory write
+    // ------------------------------------------------------------------
+    stylus0 [shape=box, style="filled", fillcolor="#ffedd5", color="#f97316", penwidth=2, label="", width=2.917, height=4.306, pos="785,740!"];
+    stylus0_t [shape=plaintext, width=2.694, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="194"><tr><td align="left"><font point-size="11"><b>stylus0</b> : stylus</font></td></tr></table>>, pos="785,882!"];
+    sty_note [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<addr = y · h_res + x>, pos="785,868!"];
+    sty_x [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_x>, pos="728,842!"];
+    sty_y [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_y>, pos="728,687!"];
+    sty_bus [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.667, label=<o_addr<br/>o_data<br/>o_we>, pos="842,765!"];
+    sty_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="728,635!"];
+    sty_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="728,609!"];
+    sty_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="610,635!"];
+    sty_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="610,609!"];
+    l_posx [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_pos_x>, pos="610,852!"];
+    l_posy [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_pos_y>, pos="610,697!"];
+    eraser0 [shape=box, style="filled", fillcolor="#ffedd5", color="#f97316", penwidth=2, label="", width=2.917, height=2.222, pos="785,470!"];
+    eraser0_t [shape=plaintext, width=2.694, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="194"><tr><td align="left"><font point-size="11"><b>eraser0</b> : eraser</font></td></tr></table>>, pos="785,537!"];
+    era_start [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_start>, pos="728,510!"];
+    era_bus [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.667, label=<o_addr<br/>o_data<br/>o_we>, pos="842,500!"];
+    era_busy [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<o_busy>, pos="842,440!"];
+    era_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="728,484!"];
+    era_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="728,458!"];
+    era_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="610,484!"];
+    era_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="610,458!"];
+    era_note [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<sweeps 0 … h_res · v_res − 1>, pos="785,403!"];
+
+    // ------------------------------------------------------------------
+    // Port A select: standing mux (wide side = inputs, left edge at x=1005)
+    // ------------------------------------------------------------------
+    mux [shape=trapezium, orientation=270, style=filled, fillcolor="#ede9fe", color="#8b5cf6", penwidth=1.8, width=1.111, height=4.653, fontsize=10, label=<<b>MUX</b><br/>3 × 2:1<br/><font point-size="9">addr<br/>data<br/>we</font>>, pos="1045,632!"];
+    mux_0 [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#7c3aed", label=<<b>0</b>>, pos="1018,765!"];
+    mux_1 [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#7c3aed", label=<<b>1</b>>, pos="1018,500!"];
+    a_in0 [shape=point, style=invis, width=0.01, height=0.01, label="", pos="1005,765!"];
+    a_in1 [shape=point, style=invis, width=0.01, height=0.01, label="", pos="1005,500!"];
+    a_sel [shape=point, style=invis, width=0.01, height=0.01, label="", pos="1045,440!"];
+    l_sty [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_stylus_*>, pos="948,775!"];
+    l_era [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_eraser_*>, pos="948,510!"];
+    l_sel [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#7c3aed", label=<sel · s_erasing>, pos="968,450!"];
+
+    // ------------------------------------------------------------------
+    // Write register: flip-flops between the mux and port A
+    // ------------------------------------------------------------------
+    wreg0 [shape=box, style="filled", fillcolor="#ede9fe", color="#8b5cf6", penwidth=2, label="", width=2.222, height=2.431, pos="1310,618!"];
+    wreg0_t [shape=plaintext, width=2.000, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="144"><tr><td align="left"><font point-size="11"><b>wr_reg0</b> : write_reg</font></td></tr></table>>, pos="1310,692!"];
+    wreg_note [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<reset → o_we = '0'>, pos="1310,674!"];
+    wreg_in [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.667, label=<i_addr<br/>i_data<br/>i_we>, pos="1278,633!"];
+    wreg_out [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.667, label=<o_addr<br/>o_data<br/>o_we>, pos="1342,633!"];
+    wreg_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="1278,583!"];
+    wreg_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="1278,557!"];
+    wreg_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="1165,583!"];
+    wreg_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="1165,557!"];
+    l_mux [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_mux_*>, pos="1162,643!"];
+
+    // ------------------------------------------------------------------
+    // Memory: dpram0 (port A = write, top · port B = read, bottom)
+    // dpram has NO reset input: only clocks are connected
+    // ------------------------------------------------------------------
+    dpram0 [shape=box, style="filled", fillcolor="#dcfce7", color="#22c55e", penwidth=2, label="", width=2.778, height=4.514, pos="1645,582!"];
+    dpram0_t [shape=plaintext, width=2.556, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="184"><tr><td align="left"><font point-size="11"><b>dpram0</b> : dpram</font></td></tr></table>>, pos="1645,732!"];
+    dp_generic [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<generic: mem_size = h_res · v_res<br/>data_width = 1>, pos="1645,710!"];
+    dp_note_a [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#15803d", label=<<b>port A · write</b>>, pos="1645,675!"];
+    dp_bus [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.111, height=0.667, label=<i_addr_a<br/>i_data_a<br/>i_we_a>, pos="1595,633!"];
+    dp_clk_a [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk_a>, pos="1593,583!"];
+    dp_q_a [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<o_q_a>, pos="1697,633!"];
+    dp_sep [shape=box, style=dashed, color="#22c55e", label="", width=2.500, height=0.01, pos="1645,555!"];
+    dp_note_b [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#15803d", label=<<b>port B · read</b>>, pos="1645,540!"];
+    dp_addr_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_addr_b>, pos="1593,518!"];
+    dp_we_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_we_b>, pos="1593,492!"];
+    dp_data_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_data_b>, pos="1593,466!"];
+    dp_clk_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk_b>, pos="1593,440!"];
+    dp_q_b [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<o_q_b>, pos="1697,518!"];
+    src_clk_a [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="1465,583!"];
+    src_addr_b [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.597, height=0.278, fontsize=9, label=<<b>s_pixel_address</b>>, pos="1455,518!"];
+    src_we_b [shape=box, style="rounded,filled", fillcolor="#e2e8f0", color="#94a3b8", width=0.556, height=0.278, fontsize=10, label=<'0'>, pos="1490,492!"];
+    src_data_b [shape=box, style="rounded,filled", fillcolor="#e2e8f0", color="#94a3b8", width=0.556, height=0.278, fontsize=10, label=<"0">, pos="1490,466!"];
+    src_clk_b [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="1465,440!"];
+    dst_q_a [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#64748b", label=<<i>open</i>>, pos="1800,633!"];
+    dst_q_b [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.458, height=0.278, fontsize=9, label=<<b>s_pixel_value</b>>, pos="1815,518!"];
+    l_ram [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<s_ram_addr_a / data / we>, pos="1458,643!"];
+
+    // ------------------------------------------------------------------
+    // Video output: hdmi_controler (timing) + pixel_color (registered)
+    // pixel_color registers the color AND hs/vs/de in the same clock edge,
+    // so the color and the sync signals reach the pins aligned.
+    // ------------------------------------------------------------------
+    g_vid [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#93c5fd", penwidth=1.2, label="", width=13.125, height=4.375, pos="1712,188!"];
+    g_vid_t [shape=plaintext, width=12.847, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="925"><tr><td align="left"><font point-size="12"><b>Video output</b></font></td></tr></table>>, pos="1712,331!"];
+    g_pins_out [shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#cbd5e1", penwidth=1.2, label="", width=2.361, height=4.375, pos="2300,188!"];
+    g_pins_out_t [shape=plaintext, width=2.083, height=0.25, label=<<table border="0" cellpadding="0" cellspacing="0" width="150"><tr><td align="left"><font point-size="12"><b>Board pins (HDMI out)</b></font></td></tr></table>>, pos="2300,331!"];
+    hdmi0 [shape=box, style="filled", fillcolor="#dbeafe", color="#2563eb", penwidth=2, label="", width=3.611, height=3.403, pos="1510,208!"];
+    hdmi0_t [shape=plaintext, width=3.389, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="244"><tr><td align="left"><font point-size="11"><b>hdmi0</b> : hdmi_controler</font></td></tr></table>>, pos="1510,317!"];
+    hdmi_generic [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<generic: h_res, v_res, h_sync, h_fp,<br/>h_bp, v_sync, v_fp, v_bp>, pos="1510,288!"];
+    hdmi_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="1428,255!"];
+    hdmi_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="1428,229!"];
+    hdmi_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="1310,255!"];
+    hdmi_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="1310,229!"];
+    hdmi_hs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_hs>, pos="1580,255!"];
+    hdmi_vs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_vs>, pos="1580,229!"];
+    hdmi_de [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_de>, pos="1580,203!"];
+    hdmi_pen [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_pixel_en>, pos="1580,177!"];
+    hdmi_addr [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_pixel_address>, pos="1580,151!"];
+    hdmi_x [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_x_counter>, pos="1580,125!"];
+    hdmi_y [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_y_counter>, pos="1580,99!"];
+    dst_addr [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.597, height=0.278, fontsize=9, label=<<b>s_pixel_address</b>>, pos="1715,151!"];
+    dst_pen [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#64748b", label=<<i>open</i>>, pos="1668,177!"];
+    dst_x [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#64748b", label=<<i>open</i>>, pos="1668,125!"];
+    dst_y [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=10, fontcolor="#64748b", label=<<i>open</i>>, pos="1668,99!"];
+    color0 [shape=box, style="filled", fillcolor="#ccfbf1", color="#0d9488", penwidth=2, label="", width=3.194, height=3.958, pos="1965,188!"];
+    color0_t [shape=plaintext, width=2.972, height=0.22, label=<<table border="0" cellpadding="0" cellspacing="0" width="214"><tr><td align="left"><font point-size="11"><b>color0</b> : pixel_color</font></td></tr></table>>, pos="1965,317!"];
+    color_note [shape=plaintext, fixedsize=false, width=0.1, height=0.1, fontsize=9, fontcolor="#475569", label=<'1' → x"FFFFFF" (white)<br/>'0' → x"000000" (black)>, pos="1965,290!"];
+    color_hs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_hdmi_hs>, pos="1898,255!"];
+    color_vs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_hdmi_vs>, pos="1898,229!"];
+    color_de [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_hdmi_de>, pos="1898,203!"];
+    color_in [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_pixel>, pos="1898,177!"];
+    color_ohs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_hs>, pos="2020,255!"];
+    color_ovs [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_vs>, pos="2020,229!"];
+    color_ode [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_hdmi_de>, pos="2020,203!"];
+    color_out [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.389, height=0.278, label=<o_color [23:0]>, pos="2020,177!"];
+    color_clk [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_clk>, pos="1898,85!"];
+    color_rst [shape=box, style=filled, fillcolor="#ffffff", color="#94a3b8", fixedsize=true, fontsize=10, width=1.056, height=0.278, label=<i_rst_n>, pos="1898,59!"];
+    color_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="1790,85!"];
+    color_rst_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_rst_n</b>>, pos="1790,59!"];
+    color_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.458, height=0.278, fontsize=9, label=<<b>s_pixel_value</b>>, pos="1785,177!"];
+    pin_tx_clk [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.944, height=0.306, fontsize=10, label="o_hdmi_tx_clk", pos="2300,281!"];
+    pin_tx_hs [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.944, height=0.306, fontsize=10, label="o_hdmi_tx_hs", pos="2300,255!"];
+    pin_tx_vs [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.944, height=0.306, fontsize=10, label="o_hdmi_tx_vs", pos="2300,229!"];
+    pin_tx_de [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.944, height=0.306, fontsize=10, label="o_hdmi_tx_de", pos="2300,203!"];
+    pin_tx_d [shape=cds, style=filled, fillcolor="#e2e8f0", color="#94a3b8", width=1.944, height=0.306, fontsize=10, label="o_hdmi_tx_d [23:0]", pos="2300,177!"];
+    tx_clk_src [shape=hexagon, style=filled, fillcolor="#fef9c3", color="#eab308", width=1.250, height=0.278, fontsize=9, label=<<b>s_clk_27</b>>, pos="2135,281!"];
+
+    // ==================================================================
+    // Wires
+    // ==================================================================
+    pin_clk -> pll_refclk;
+    pin_rst -> pll_rst;
+    pll_clk27 -> net_clk;
+    pll_locked -> net_rst;
+    encx_clk_src -> encx_clk [color="#a16207"];
+    encx_rst_src -> encx_rst [color="#a16207"];
+    ency_clk_src -> ency_clk [color="#a16207"];
+    ency_rst_src -> ency_rst [color="#a16207"];
+    pin_lca -> encx_a;
+    pin_lcb -> encx_b;
+    pin_rca -> ency_a;
+    pin_rcb -> ency_b;
+    sty_clk_src -> sty_clk [color="#a16207"];
+    sty_rst_src -> sty_rst [color="#a16207"];
+    encx_pos -> sty_x [penwidth=2.4];
+    ency_pos -> sty_y [penwidth=2.4];
+    era_clk_src -> era_clk [color="#a16207"];
+    era_rst_src -> era_rst [color="#a16207"];
+    pin_lpb -> era_start;
+    sty_bus -> a_in0 [penwidth=2.8];
+    era_bus -> a_in1 [penwidth=2.8];
+    era_busy -> a_sel [arrowhead=none, style=dashed, color="#7c3aed"];
+    a_sel -> mux [style=dashed, color="#7c3aed"];
+    wreg_clk_src -> wreg_clk [color="#a16207"];
+    wreg_rst_src -> wreg_rst [color="#a16207"];
+    mux -> wreg_in [penwidth=2.8];
+    wreg_out -> dp_bus [penwidth=2.8];
+    src_clk_a -> dp_clk_a [color="#a16207"];
+    dp_q_a -> dst_q_a [arrowhead=none, style=dashed, color="#94a3b8"];
+    src_addr_b -> dp_addr_b [penwidth=2.4];
+    src_we_b -> dp_we_b;
+    src_data_b -> dp_data_b;
+    src_clk_b -> dp_clk_b [color="#a16207"];
+    dp_q_b -> dst_q_b [penwidth=2.4];
+    hdmi_clk_src -> hdmi_clk [color="#a16207"];
+    hdmi_rst_src -> hdmi_rst [color="#a16207"];
+    color_clk_src -> color_clk [color="#a16207"];
+    color_rst_src -> color_rst [color="#a16207"];
+    hdmi_hs -> color_hs;
+    hdmi_vs -> color_vs;
+    hdmi_de -> color_de;
+    hdmi_addr -> dst_addr [penwidth=2.4];
+    hdmi_pen -> dst_pen [arrowhead=none, style=dashed, color="#94a3b8"];
+    hdmi_x -> dst_x [arrowhead=none, style=dashed, color="#94a3b8"];
+    hdmi_y -> dst_y [arrowhead=none, style=dashed, color="#94a3b8"];
+    color_src -> color_in [penwidth=2.4];
+    tx_clk_src -> pin_tx_clk [color="#a16207"];
+    color_ohs -> pin_tx_hs;
+    color_ovs -> pin_tx_vs;
+    color_ode -> pin_tx_de;
+    color_out -> pin_tx_d [penwidth=2.8];
+}

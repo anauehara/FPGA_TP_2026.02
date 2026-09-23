@@ -1,0 +1,1200 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2378pt" height="1113pt" viewBox="0.00 0.00 2378.00 1113.00">
+<g id="graph0" class="graph" transform="translate(4,1109) scale(1)" data-name="telecran">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-1109 2374,-1109 2374,4 -4,4" style=""/>
+<!-- g_pins -->
+<g id="node1" class="node" pointer-events="visible" data-name="g_pins">
+
+<path fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" d="M138,-1054.5C138,-1054.5 12,-1054.5 12,-1054.5 6,-1054.5 0,-1048.5 0,-1042.5 0,-1042.5 0,-466.5 0,-466.5 0,-460.5 6,-454.5 12,-454.5 12,-454.5 138,-454.5 138,-454.5 144,-454.5 150,-460.5 150,-466.5 150,-466.5 150,-1042.5 150,-1042.5 150,-1048.5 144,-1054.5 138,-1054.5" style=""/>
+</g>
+<!-- g_pins_t -->
+<g id="node2" class="node" pointer-events="visible" data-name="g_pins_t">
+
+<text text-anchor="start" x="9.66" y="-1037.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Board pins</text>
+</g>
+<!-- g_top -->
+<g id="node3" class="node" pointer-events="visible" data-name="g_top">
+
+<path fill="#ffffff" stroke="#334155" stroke-width="1.8" d="M2173,-1105C2173,-1105 187,-1105 187,-1105 181,-1105 175,-1099 175,-1093 175,-1093 175,-12 175,-12 175,-6 181,0 187,0 187,0 2173,0 2173,0 2179,0 2185,-6 2185,-12 2185,-12 2185,-1093 2185,-1093 2185,-1099 2179,-1105 2173,-1105" style=""/>
+</g>
+<!-- g_top_t -->
+<g id="node4" class="node" pointer-events="visible" data-name="g_top_t">
+
+<text text-anchor="start" x="184.65" y="-1086.9" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" style="">telecran</text>
+</g>
+<!-- g_top_sub -->
+<g id="node5" class="node" pointer-events="visible" data-name="g_top_sub">
+
+<text text-anchor="start" x="252.47" y="-1086.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">h_res = 720 · v_res = 480</text>
+</g>
+<!-- g_clk -->
+<g id="node6" class="node" pointer-events="visible" data-name="g_clk">
+
+<path fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" d="M878,-1070C878,-1070 202,-1070 202,-1070 196,-1070 190,-1064 190,-1058 190,-1058 190,-927 190,-927 190,-921 196,-915 202,-915 202,-915 878,-915 878,-915 884,-915 890,-921 890,-927 890,-927 890,-1058 890,-1058 890,-1064 884,-1070 878,-1070" style=""/>
+</g>
+<!-- g_clk_t -->
+<g id="node7" class="node" pointer-events="visible" data-name="g_clk_t">
+
+<text text-anchor="start" x="199.65" y="-1052.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Clock &amp; reset</text>
+</g>
+<!-- g_enc -->
+<g id="node8" class="node" pointer-events="visible" data-name="g_enc">
+
+<path fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2" d="M528,-899.5C528,-899.5 202,-899.5 202,-899.5 196,-899.5 190,-893.5 190,-887.5 190,-887.5 190,-581.5 190,-581.5 190,-575.5 196,-569.5 202,-569.5 202,-569.5 528,-569.5 528,-569.5 534,-569.5 540,-575.5 540,-581.5 540,-581.5 540,-887.5 540,-887.5 540,-893.5 534,-899.5 528,-899.5" style=""/>
+</g>
+<!-- g_enc_t -->
+<g id="node9" class="node" pointer-events="visible" data-name="g_enc_t">
+
+<text text-anchor="start" x="199.66" y="-882.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Encoders</text>
+</g>
+<!-- g_wr -->
+<g id="node10" class="node" pointer-events="visible" data-name="g_wr">
+
+<path fill="#fff7ed" stroke="#fdba74" stroke-width="1.2" d="M878,-899.5C878,-899.5 562,-899.5 562,-899.5 556,-899.5 550,-893.5 550,-887.5 550,-887.5 550,-371.5 550,-371.5 550,-365.5 556,-359.5 562,-359.5 562,-359.5 878,-359.5 878,-359.5 884,-359.5 890,-365.5 890,-371.5 890,-371.5 890,-887.5 890,-887.5 890,-893.5 884,-899.5 878,-899.5" style=""/>
+</g>
+<!-- g_wr_t -->
+<g id="node11" class="node" pointer-events="visible" data-name="g_wr_t">
+
+<text text-anchor="start" x="559.82" y="-882.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Memory write</text>
+</g>
+<!-- g_mux -->
+<g id="node12" class="node" pointer-events="visible" data-name="g_mux">
+
+<path fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2" d="M1368.5,-899.5C1368.5,-899.5 917.5,-899.5 917.5,-899.5 911.5,-899.5 905.5,-893.5 905.5,-887.5 905.5,-887.5 905.5,-371.5 905.5,-371.5 905.5,-365.5 911.5,-359.5 917.5,-359.5 917.5,-359.5 1368.5,-359.5 1368.5,-359.5 1374.5,-359.5 1380.5,-365.5 1380.5,-371.5 1380.5,-371.5 1380.5,-887.5 1380.5,-887.5 1380.5,-893.5 1374.5,-899.5 1368.5,-899.5" style=""/>
+</g>
+<!-- g_mux_t -->
+<g id="node13" class="node" pointer-events="visible" data-name="g_mux_t">
+
+<text text-anchor="start" x="915.64" y="-882.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Port A select &amp; register</text>
+</g>
+<!-- g_mem -->
+<g id="node14" class="node" pointer-events="visible" data-name="g_mem">
+
+<path fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" d="M1857.5,-755C1857.5,-755 1396.5,-755 1396.5,-755 1390.5,-755 1384.5,-749 1384.5,-743 1384.5,-743 1384.5,-402 1384.5,-402 1384.5,-396 1390.5,-390 1396.5,-390 1396.5,-390 1857.5,-390 1857.5,-390 1863.5,-390 1869.5,-396 1869.5,-402 1869.5,-402 1869.5,-743 1869.5,-743 1869.5,-749 1863.5,-755 1857.5,-755" style=""/>
+</g>
+<!-- g_mem_t -->
+<g id="node15" class="node" pointer-events="visible" data-name="g_mem_t">
+
+<text text-anchor="start" x="1394.99" y="-737.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Memory</text>
+</g>
+<!-- pin_clk -->
+<g id="node16" class="node" pointer-events="visible" data-name="pin_clk">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-1011.83 10,-1011.83 10,-997.17 132.67,-997.17 140,-1004.5 132.67,-1011.83" style=""/>
+<text text-anchor="middle" x="75" y="-1001.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk_50</text>
+</g>
+<!-- pin_rst -->
+<g id="node17" class="node" pointer-events="visible" data-name="pin_rst">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-976.83 10,-976.83 10,-962.17 132.67,-962.17 140,-969.5 132.67,-976.83" style=""/>
+<text text-anchor="middle" x="75" y="-966.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n (KEY0)</text>
+</g>
+<!-- pin_lca -->
+<g id="node18" class="node" pointer-events="visible" data-name="pin_lca">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-846.83 10,-846.83 10,-832.17 132.67,-832.17 140,-839.5 132.67,-846.83" style=""/>
+<text text-anchor="middle" x="75" y="-836.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_left_ch_a</text>
+</g>
+<!-- pin_lcb -->
+<g id="node19" class="node" pointer-events="visible" data-name="pin_lcb">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-820.83 10,-820.83 10,-806.17 132.67,-806.17 140,-813.5 132.67,-820.83" style=""/>
+<text text-anchor="middle" x="75" y="-810.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_left_ch_b</text>
+</g>
+<!-- pin_rca -->
+<g id="node20" class="node" pointer-events="visible" data-name="pin_rca">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-691.83 10,-691.83 10,-677.17 132.67,-677.17 140,-684.5 132.67,-691.83" style=""/>
+<text text-anchor="middle" x="75" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_right_ch_a</text>
+</g>
+<!-- pin_rcb -->
+<g id="node21" class="node" pointer-events="visible" data-name="pin_rcb">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-665.83 10,-665.83 10,-651.17 132.67,-651.17 140,-658.5 132.67,-665.83" style=""/>
+<text text-anchor="middle" x="75" y="-655.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_right_ch_b</text>
+</g>
+<!-- pin_lpb -->
+<g id="node22" class="node" pointer-events="visible" data-name="pin_lpb">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="132.67,-501.83 10,-501.83 10,-487.17 132.67,-487.17 140,-494.5 132.67,-501.83" style=""/>
+<text text-anchor="middle" x="75" y="-491.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_left_pb (active low)</text>
+</g>
+<!-- pll0 -->
+<g id="node23" class="node" pointer-events="visible" data-name="pll0">
+
+<polygon fill="#dbeafe" stroke="#3b82f6" stroke-width="2" points="525,-1044.5 325,-1044.5 325,-926.5 525,-926.5 525,-1044.5" style=""/>
+</g>
+<!-- pll0_t -->
+<g id="node24" class="node" pointer-events="visible" data-name="pll0_t">
+
+<text text-anchor="start" x="332.94" y="-1028.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">pll0</text>
+<text text-anchor="start" x="351.89" y="-1028.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : pll</text>
+</g>
+<!-- pll_refclk -->
+<g id="node25" class="node" pointer-events="visible" data-name="pll_refclk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-1014.5 335,-1014.5 335,-994.5 411,-994.5 411,-1014.5" style=""/>
+<text text-anchor="start" x="361.05" y="-1001.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">refclk</text>
+</g>
+<!-- pll_rst -->
+<g id="node26" class="node" pointer-events="visible" data-name="pll_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-979.5 335,-979.5 335,-959.5 411,-959.5 411,-979.5" style=""/>
+<text text-anchor="start" x="367.45" y="-966.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">rst</text>
+</g>
+<!-- pll_clk27 -->
+<g id="node27" class="node" pointer-events="visible" data-name="pll_clk27">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="515,-1014.5 439,-1014.5 439,-994.5 515,-994.5 515,-1014.5" style=""/>
+<text text-anchor="start" x="458.38" y="-1001.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">outclk_0</text>
+</g>
+<!-- pll_locked -->
+<g id="node28" class="node" pointer-events="visible" data-name="pll_locked">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="515,-979.5 439,-979.5 439,-959.5 515,-959.5 515,-979.5" style=""/>
+<text text-anchor="start" x="462.55" y="-966.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">locked</text>
+</g>
+<!-- pll_note -->
+<g id="node29" class="node" pointer-events="visible" data-name="pll_note">
+
+<text text-anchor="start" x="387.74" y="-935.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">50 MHz → 27 MHz</text>
+</g>
+<!-- net_clk -->
+<g id="node30" class="node" pointer-events="visible" data-name="net_clk">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="715,-1004.5 690,-1014.5 640,-1014.5 615,-1004.5 640,-994.5 690,-994.5 715,-1004.5" style=""/>
+<text text-anchor="start" x="646.23" y="-1002.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- net_rst -->
+<g id="node31" class="node" pointer-events="visible" data-name="net_rst">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="715,-969.5 690,-979.5 640,-979.5 615,-969.5 640,-959.5 690,-959.5 715,-969.5" style=""/>
+<text text-anchor="start" x="648.99" y="-967.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- l_not -->
+<g id="node32" class="node" pointer-events="visible" data-name="l_not">
+
+<text text-anchor="start" x="228.74" y="-975.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">not</text>
+</g>
+<!-- enc_x -->
+<g id="node33" class="node" pointer-events="visible" data-name="enc_x">
+
+<polygon fill="#fee2e2" stroke="#dc2626" stroke-width="2" points="525,-880 325,-880 325,-745 525,-745 525,-880" style=""/>
+</g>
+<!-- enc_x_t -->
+<g id="node34" class="node" pointer-events="visible" data-name="enc_x_t">
+
+<text text-anchor="start" x="332.95" y="-863.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">enc_x</text>
+<text text-anchor="start" x="364.13" y="-863.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : encoder</text>
+</g>
+<!-- encx_a -->
+<g id="node35" class="node" pointer-events="visible" data-name="encx_a">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-849.5 335,-849.5 335,-829.5 411,-829.5 411,-849.5" style=""/>
+<text text-anchor="start" x="366.33" y="-836.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_a</text>
+</g>
+<!-- encx_b -->
+<g id="node36" class="node" pointer-events="visible" data-name="encx_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-823.5 335,-823.5 335,-803.5 411,-803.5 411,-823.5" style=""/>
+<text text-anchor="start" x="366.33" y="-810.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_b</text>
+</g>
+<!-- encx_pos -->
+<g id="node37" class="node" pointer-events="visible" data-name="encx_pos">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="515,-836.5 439,-836.5 439,-816.5 515,-816.5 515,-836.5" style=""/>
+<text text-anchor="start" x="454.2" y="-823.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_position</text>
+</g>
+<!-- encx_clk -->
+<g id="node38" class="node" pointer-events="visible" data-name="encx_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-797.5 335,-797.5 335,-777.5 411,-777.5 411,-797.5" style=""/>
+<text text-anchor="start" x="363" y="-784.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- encx_rst -->
+<g id="node39" class="node" pointer-events="visible" data-name="encx_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-771.5 335,-771.5 335,-751.5 411,-751.5 411,-771.5" style=""/>
+<text text-anchor="start" x="357.99" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- encx_clk_src -->
+<g id="node40" class="node" pointer-events="visible" data-name="encx_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="300,-787.5 277.5,-797.5 232.5,-797.5 210,-787.5 232.5,-777.5 277.5,-777.5 300,-787.5" style=""/>
+<text text-anchor="start" x="236.23" y="-785.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- encx_rst_src -->
+<g id="node41" class="node" pointer-events="visible" data-name="encx_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="300,-761.5 277.5,-771.5 232.5,-771.5 210,-761.5 232.5,-751.5 277.5,-751.5 300,-761.5" style=""/>
+<text text-anchor="start" x="238.99" y="-759.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- enc_y -->
+<g id="node42" class="node" pointer-events="visible" data-name="enc_y">
+
+<polygon fill="#fee2e2" stroke="#dc2626" stroke-width="2" points="525,-724 325,-724 325,-589 525,-589 525,-724" style=""/>
+</g>
+<!-- enc_y_t -->
+<g id="node43" class="node" pointer-events="visible" data-name="enc_y_t">
+
+<text text-anchor="start" x="332.95" y="-708.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">enc_y</text>
+<text text-anchor="start" x="364.13" y="-708.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : encoder</text>
+</g>
+<!-- ency_a -->
+<g id="node44" class="node" pointer-events="visible" data-name="ency_a">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-694.5 335,-694.5 335,-674.5 411,-674.5 411,-694.5" style=""/>
+<text text-anchor="start" x="366.33" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_a</text>
+</g>
+<!-- ency_b -->
+<g id="node45" class="node" pointer-events="visible" data-name="ency_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-668.5 335,-668.5 335,-648.5 411,-648.5 411,-668.5" style=""/>
+<text text-anchor="start" x="366.33" y="-655.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_b</text>
+</g>
+<!-- ency_pos -->
+<g id="node46" class="node" pointer-events="visible" data-name="ency_pos">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="515,-681.5 439,-681.5 439,-661.5 515,-661.5 515,-681.5" style=""/>
+<text text-anchor="start" x="454.2" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_position</text>
+</g>
+<!-- ency_clk -->
+<g id="node47" class="node" pointer-events="visible" data-name="ency_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-642.5 335,-642.5 335,-622.5 411,-622.5 411,-642.5" style=""/>
+<text text-anchor="start" x="363" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- ency_rst -->
+<g id="node48" class="node" pointer-events="visible" data-name="ency_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="411,-616.5 335,-616.5 335,-596.5 411,-596.5 411,-616.5" style=""/>
+<text text-anchor="start" x="357.99" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- ency_clk_src -->
+<g id="node49" class="node" pointer-events="visible" data-name="ency_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="300,-632.5 277.5,-642.5 232.5,-642.5 210,-632.5 232.5,-622.5 277.5,-622.5 300,-632.5" style=""/>
+<text text-anchor="start" x="236.23" y="-630.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- ency_rst_src -->
+<g id="node50" class="node" pointer-events="visible" data-name="ency_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="300,-606.5 277.5,-616.5 232.5,-616.5 210,-606.5 232.5,-596.5 277.5,-596.5 300,-606.5" style=""/>
+<text text-anchor="start" x="238.99" y="-604.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- stylus0 -->
+<g id="node51" class="node" pointer-events="visible" data-name="stylus0">
+
+<polygon fill="#ffedd5" stroke="#f97316" stroke-width="2" points="875,-879.5 665,-879.5 665,-569.5 875,-569.5 875,-879.5" style=""/>
+</g>
+<!-- stylus0_t -->
+<g id="node52" class="node" pointer-events="visible" data-name="stylus0_t">
+
+<text text-anchor="start" x="672.9" y="-863.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">stylus0</text>
+<text text-anchor="start" x="710.81" y="-863.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : stylus</text>
+</g>
+<!-- sty_note -->
+<g id="node53" class="node" pointer-events="visible" data-name="sty_note">
+
+<text text-anchor="start" x="729.98" y="-849.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">addr = y · h_res + x</text>
+</g>
+<!-- sty_x -->
+<g id="node54" class="node" pointer-events="visible" data-name="sty_x">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-836.5 675,-836.5 675,-816.5 751,-816.5 751,-836.5" style=""/>
+<text text-anchor="start" x="706.61" y="-823.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_x</text>
+</g>
+<!-- sty_y -->
+<g id="node55" class="node" pointer-events="visible" data-name="sty_y">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-681.5 675,-681.5 675,-661.5 751,-661.5 751,-681.5" style=""/>
+<text text-anchor="start" x="706.61" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_y</text>
+</g>
+<!-- sty_bus -->
+<g id="node56" class="node" pointer-events="visible" data-name="sty_bus">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="865,-773.5 789,-773.5 789,-725.5 865,-725.5 865,-773.5" style=""/>
+<text text-anchor="start" x="811.43" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_addr</text>
+<text text-anchor="start" x="811.71" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_data</text>
+<text text-anchor="start" x="815.05" y="-734.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_we</text>
+</g>
+<!-- sty_clk -->
+<g id="node57" class="node" pointer-events="visible" data-name="sty_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-629.5 675,-629.5 675,-609.5 751,-609.5 751,-629.5" style=""/>
+<text text-anchor="start" x="703" y="-616.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- sty_rst -->
+<g id="node58" class="node" pointer-events="visible" data-name="sty_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-603.5 675,-603.5 675,-583.5 751,-583.5 751,-603.5" style=""/>
+<text text-anchor="start" x="697.99" y="-590.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- sty_clk_src -->
+<g id="node59" class="node" pointer-events="visible" data-name="sty_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="640,-619.5 617.5,-629.5 572.5,-629.5 550,-619.5 572.5,-609.5 617.5,-609.5 640,-619.5" style=""/>
+<text text-anchor="start" x="576.23" y="-617.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- sty_rst_src -->
+<g id="node60" class="node" pointer-events="visible" data-name="sty_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="640,-593.5 617.5,-603.5 572.5,-603.5 550,-593.5 572.5,-583.5 617.5,-583.5 640,-593.5" style=""/>
+<text text-anchor="start" x="578.99" y="-591.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- l_posx -->
+<g id="node61" class="node" pointer-events="visible" data-name="l_posx">
+
+<text text-anchor="start" x="578.24" y="-833.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_pos_x</text>
+</g>
+<!-- l_posy -->
+<g id="node62" class="node" pointer-events="visible" data-name="l_posy">
+
+<text text-anchor="start" x="578.24" y="-678.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_pos_y</text>
+</g>
+<!-- eraser0 -->
+<g id="node63" class="node" pointer-events="visible" data-name="eraser0">
+
+<polygon fill="#ffedd5" stroke="#f97316" stroke-width="2" points="875,-534.5 665,-534.5 665,-374.5 875,-374.5 875,-534.5" style=""/>
+</g>
+<!-- eraser0_t -->
+<g id="node64" class="node" pointer-events="visible" data-name="eraser0_t">
+
+<text text-anchor="start" x="672.75" y="-518.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">eraser0</text>
+<text text-anchor="start" x="711.9" y="-518.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : eraser</text>
+</g>
+<!-- era_start -->
+<g id="node65" class="node" pointer-events="visible" data-name="era_start">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-504.5 675,-504.5 675,-484.5 751,-484.5 751,-504.5" style=""/>
+<text text-anchor="start" x="699.38" y="-491.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_start</text>
+</g>
+<!-- era_bus -->
+<g id="node66" class="node" pointer-events="visible" data-name="era_bus">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="865,-508.5 789,-508.5 789,-460.5 865,-460.5 865,-508.5" style=""/>
+<text text-anchor="start" x="811.43" y="-493.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_addr</text>
+<text text-anchor="start" x="811.71" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_data</text>
+<text text-anchor="start" x="815.05" y="-469.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_we</text>
+</g>
+<!-- era_busy -->
+<g id="node67" class="node" pointer-events="visible" data-name="era_busy">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="865,-434.5 789,-434.5 789,-414.5 865,-414.5 865,-434.5" style=""/>
+<text text-anchor="start" x="810.88" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_busy</text>
+</g>
+<!-- era_clk -->
+<g id="node68" class="node" pointer-events="visible" data-name="era_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-478.5 675,-478.5 675,-458.5 751,-458.5 751,-478.5" style=""/>
+<text text-anchor="start" x="703" y="-465.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- era_rst -->
+<g id="node69" class="node" pointer-events="visible" data-name="era_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="751,-452.5 675,-452.5 675,-432.5 751,-432.5 751,-452.5" style=""/>
+<text text-anchor="start" x="697.99" y="-439.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- era_clk_src -->
+<g id="node70" class="node" pointer-events="visible" data-name="era_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="640,-468.5 617.5,-478.5 572.5,-478.5 550,-468.5 572.5,-458.5 617.5,-458.5 640,-468.5" style=""/>
+<text text-anchor="start" x="576.23" y="-466.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- era_rst_src -->
+<g id="node71" class="node" pointer-events="visible" data-name="era_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="640,-442.5 617.5,-452.5 572.5,-452.5 550,-442.5 572.5,-432.5 617.5,-432.5 640,-442.5" style=""/>
+<text text-anchor="start" x="578.99" y="-440.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- era_note -->
+<g id="node72" class="node" pointer-events="visible" data-name="era_note">
+
+<text text-anchor="start" x="708.72" y="-384.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">sweeps 0 … h_res · v_res − 1</text>
+</g>
+<!-- mux -->
+<g id="node73" class="node" pointer-events="visible" data-name="mux">
+
+<polygon fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.8" points="1070,-518.68 1070,-714.32 990,-784 990,-449 1070,-518.68" style=""/>
+<text text-anchor="start" x="1018.89" y="-632" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00" style="">MUX</text>
+<text text-anchor="start" x="1014.71" y="-622" font-family="Helvetica,sans-Serif" font-size="10.00" style="">3 × 2:1</text>
+<text text-anchor="start" x="1020.99" y="-612.9" font-family="Helvetica,sans-Serif" font-size="9.00" style="">addr</text>
+<text text-anchor="start" x="1021.24" y="-603.9" font-family="Helvetica,sans-Serif" font-size="9.00" style="">data</text>
+<text text-anchor="start" x="1024.25" y="-594.9" font-family="Helvetica,sans-Serif" font-size="9.00" style="">we</text>
+</g>
+<!-- mux_0 -->
+<g id="node74" class="node" pointer-events="visible" data-name="mux_0">
+
+<text text-anchor="start" x="1000.22" y="-747.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00" fill="#7c3aed" style="">0</text>
+</g>
+<!-- mux_1 -->
+<g id="node75" class="node" pointer-events="visible" data-name="mux_1">
+
+<text text-anchor="start" x="1000.22" y="-482.5" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00" fill="#7c3aed" style="">1</text>
+</g>
+<!-- a_in0 -->
+<!-- a_in1 -->
+<!-- a_sel -->
+<!-- l_sty -->
+<g id="node79" class="node" pointer-events="visible" data-name="l_sty">
+
+<text text-anchor="start" x="912.49" y="-756.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_stylus_*</text>
+</g>
+<!-- l_era -->
+<g id="node80" class="node" pointer-events="visible" data-name="l_era">
+
+<text text-anchor="start" x="911.24" y="-491.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_eraser_*</text>
+</g>
+<!-- l_sel -->
+<g id="node81" class="node" pointer-events="visible" data-name="l_sel">
+
+<text text-anchor="start" x="922.73" y="-431.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#7c3aed" style="">sel · s_erasing</text>
+</g>
+<!-- wreg0 -->
+<g id="node82" class="node" pointer-events="visible" data-name="wreg0">
+
+<polygon fill="#ede9fe" stroke="#8b5cf6" stroke-width="2" points="1375,-690 1215,-690 1215,-515 1375,-515 1375,-690" style=""/>
+</g>
+<!-- wreg0_t -->
+<g id="node83" class="node" pointer-events="visible" data-name="wreg0_t">
+
+<text text-anchor="start" x="1222.7" y="-673.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">wr_reg0</text>
+<text text-anchor="start" x="1264.89" y="-673.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : write_reg</text>
+</g>
+<!-- wreg_note -->
+<g id="node84" class="node" pointer-events="visible" data-name="wreg_note">
+
+<text text-anchor="start" x="1258.64" y="-655.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">reset → o_we = '0'</text>
+</g>
+<!-- wreg_in -->
+<g id="node85" class="node" pointer-events="visible" data-name="wreg_in">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1301,-641.5 1225,-641.5 1225,-593.5 1301,-593.5 1301,-641.5" style=""/>
+<text text-anchor="start" x="1249.1" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_addr</text>
+<text text-anchor="start" x="1249.38" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_data</text>
+<text text-anchor="start" x="1252.72" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_we</text>
+</g>
+<!-- wreg_out -->
+<g id="node86" class="node" pointer-events="visible" data-name="wreg_out">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1365,-641.5 1289,-641.5 1289,-593.5 1365,-593.5 1365,-641.5" style=""/>
+<text text-anchor="start" x="1311.43" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_addr</text>
+<text text-anchor="start" x="1311.71" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_data</text>
+<text text-anchor="start" x="1315.05" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_we</text>
+</g>
+<!-- wreg_clk -->
+<g id="node87" class="node" pointer-events="visible" data-name="wreg_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1301,-577.5 1225,-577.5 1225,-557.5 1301,-557.5 1301,-577.5" style=""/>
+<text text-anchor="start" x="1253" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- wreg_rst -->
+<g id="node88" class="node" pointer-events="visible" data-name="wreg_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1301,-551.5 1225,-551.5 1225,-531.5 1301,-531.5 1301,-551.5" style=""/>
+<text text-anchor="start" x="1247.99" y="-538.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- wreg_clk_src -->
+<g id="node89" class="node" pointer-events="visible" data-name="wreg_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1195,-567.5 1172.5,-577.5 1127.5,-577.5 1105,-567.5 1127.5,-557.5 1172.5,-557.5 1195,-567.5" style=""/>
+<text text-anchor="start" x="1131.23" y="-565.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- wreg_rst_src -->
+<g id="node90" class="node" pointer-events="visible" data-name="wreg_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1195,-541.5 1172.5,-551.5 1127.5,-551.5 1105,-541.5 1127.5,-531.5 1172.5,-531.5 1195,-541.5" style=""/>
+<text text-anchor="start" x="1133.99" y="-539.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- l_mux -->
+<g id="node91" class="node" pointer-events="visible" data-name="l_mux">
+
+<text text-anchor="start" x="1129.49" y="-624.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_mux_*</text>
+</g>
+<!-- dpram0 -->
+<g id="node92" class="node" pointer-events="visible" data-name="dpram0">
+
+<polygon fill="#dcfce7" stroke="#22c55e" stroke-width="2" points="1730,-729 1530,-729 1530,-404 1730,-404 1730,-729" style=""/>
+</g>
+<!-- dpram0_t -->
+<g id="node93" class="node" pointer-events="visible" data-name="dpram0_t">
+
+<text text-anchor="start" x="1537.96" y="-713.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">dpram0</text>
+<text text-anchor="start" x="1577.69" y="-713.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : dpram</text>
+</g>
+<!-- dp_generic -->
+<g id="node94" class="node" pointer-events="visible" data-name="dp_generic">
+
+<text text-anchor="start" x="1559.85" y="-697.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">generic: mem_size = h_res · v_res</text>
+<text text-anchor="start" x="1600.6" y="-686.4" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">data_width = 1</text>
+</g>
+<!-- dp_note_a -->
+<g id="node95" class="node" pointer-events="visible" data-name="dp_note_a">
+
+<text text-anchor="start" x="1601.25" y="-657.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" fill="#15803d" style="">port A · write</text>
+</g>
+<!-- dp_bus -->
+<g id="node96" class="node" pointer-events="visible" data-name="dp_bus">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1620,-641.5 1540,-641.5 1540,-593.5 1620,-593.5 1620,-641.5" style=""/>
+<text text-anchor="start" x="1560.54" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_addr_a</text>
+<text text-anchor="start" x="1560.82" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_data_a</text>
+<text text-anchor="start" x="1564.16" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_we_a</text>
+</g>
+<!-- dp_clk_a -->
+<g id="node97" class="node" pointer-events="visible" data-name="dp_clk_a">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1616,-577.5 1540,-577.5 1540,-557.5 1616,-557.5 1616,-577.5" style=""/>
+<text text-anchor="start" x="1562.44" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk_a</text>
+</g>
+<!-- dp_q_a -->
+<g id="node98" class="node" pointer-events="visible" data-name="dp_q_a">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1720,-627.5 1644,-627.5 1644,-607.5 1720,-607.5 1720,-627.5" style=""/>
+<text text-anchor="start" x="1668.1" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_q_a</text>
+</g>
+<!-- dp_sep -->
+<g id="node99" class="node" pointer-events="visible" data-name="dp_sep">
+
+<polygon fill="none" stroke="#22c55e" stroke-dasharray="5,2" points="1720,-540 1540,-540 1540,-539 1720,-539 1720,-540" style=""/>
+</g>
+<!-- dp_note_b -->
+<g id="node100" class="node" pointer-events="visible" data-name="dp_note_b">
+
+<text text-anchor="start" x="1602.25" y="-522.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" fill="#15803d" style="">port B · read</text>
+</g>
+<!-- dp_addr_b -->
+<g id="node101" class="node" pointer-events="visible" data-name="dp_addr_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1616,-512.5 1540,-512.5 1540,-492.5 1616,-492.5 1616,-512.5" style=""/>
+<text text-anchor="start" x="1558.54" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_addr_b</text>
+</g>
+<!-- dp_we_b -->
+<g id="node102" class="node" pointer-events="visible" data-name="dp_we_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1616,-486.5 1540,-486.5 1540,-466.5 1616,-466.5 1616,-486.5" style=""/>
+<text text-anchor="start" x="1562.16" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_we_b</text>
+</g>
+<!-- dp_data_b -->
+<g id="node103" class="node" pointer-events="visible" data-name="dp_data_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1616,-460.5 1540,-460.5 1540,-440.5 1616,-440.5 1616,-460.5" style=""/>
+<text text-anchor="start" x="1558.82" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_data_b</text>
+</g>
+<!-- dp_clk_b -->
+<g id="node104" class="node" pointer-events="visible" data-name="dp_clk_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1616,-434.5 1540,-434.5 1540,-414.5 1616,-414.5 1616,-434.5" style=""/>
+<text text-anchor="start" x="1562.44" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk_b</text>
+</g>
+<!-- dp_q_b -->
+<g id="node105" class="node" pointer-events="visible" data-name="dp_q_b">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1720,-512.5 1644,-512.5 1644,-492.5 1720,-492.5 1720,-512.5" style=""/>
+<text text-anchor="start" x="1668.1" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_q_b</text>
+</g>
+<!-- src_clk_a -->
+<g id="node106" class="node" pointer-events="visible" data-name="src_clk_a">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1495,-567.5 1472.5,-577.5 1427.5,-577.5 1405,-567.5 1427.5,-557.5 1472.5,-557.5 1495,-567.5" style=""/>
+<text text-anchor="start" x="1431.23" y="-565.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- src_addr_b -->
+<g id="node107" class="node" pointer-events="visible" data-name="src_addr_b">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1497.5,-502.5 1468.75,-512.5 1411.25,-512.5 1382.5,-502.5 1411.25,-492.5 1468.75,-492.5 1497.5,-502.5" style=""/>
+<text text-anchor="start" x="1404.98" y="-500.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_pixel_address</text>
+</g>
+<!-- src_we_b -->
+<g id="node108" class="node" pointer-events="visible" data-name="src_we_b">
+
+<path fill="#e2e8f0" stroke="#94a3b8" d="M1488.33,-486.5C1488.33,-486.5 1461.67,-486.5 1461.67,-486.5 1458.33,-486.5 1455,-483.17 1455,-479.83 1455,-479.83 1455,-473.17 1455,-473.17 1455,-469.83 1458.33,-466.5 1461.67,-466.5 1461.67,-466.5 1488.33,-466.5 1488.33,-466.5 1491.67,-466.5 1495,-469.83 1495,-473.17 1495,-473.17 1495,-479.83 1495,-479.83 1495,-483.17 1491.67,-486.5 1488.33,-486.5" style=""/>
+<text text-anchor="start" x="1470.31" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">'0'</text>
+</g>
+<!-- src_data_b -->
+<g id="node109" class="node" pointer-events="visible" data-name="src_data_b">
+
+<path fill="#e2e8f0" stroke="#94a3b8" d="M1488.33,-460.5C1488.33,-460.5 1461.67,-460.5 1461.67,-460.5 1458.33,-460.5 1455,-457.17 1455,-453.83 1455,-453.83 1455,-447.17 1455,-447.17 1455,-443.83 1458.33,-440.5 1461.67,-440.5 1461.67,-440.5 1488.33,-440.5 1488.33,-440.5 1491.67,-440.5 1495,-443.83 1495,-447.17 1495,-447.17 1495,-453.83 1495,-453.83 1495,-457.17 1491.67,-460.5 1488.33,-460.5" style=""/>
+<text text-anchor="start" x="1468.67" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">"0"</text>
+</g>
+<!-- src_clk_b -->
+<g id="node110" class="node" pointer-events="visible" data-name="src_clk_b">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1495,-424.5 1472.5,-434.5 1427.5,-434.5 1405,-424.5 1427.5,-414.5 1472.5,-414.5 1495,-424.5" style=""/>
+<text text-anchor="start" x="1431.23" y="-422.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- dst_q_a -->
+<g id="node111" class="node" pointer-events="visible" data-name="dst_q_a">
+
+<text text-anchor="start" x="1773.88" y="-615.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00" fill="#64748b" style="">open</text>
+</g>
+<!-- dst_q_b -->
+<g id="node112" class="node" pointer-events="visible" data-name="dst_q_b">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1852.5,-502.5 1826.25,-512.5 1773.75,-512.5 1747.5,-502.5 1773.75,-492.5 1826.25,-492.5 1852.5,-502.5" style=""/>
+<text text-anchor="start" x="1770.73" y="-500.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_pixel_value</text>
+</g>
+<!-- l_ram -->
+<g id="node113" class="node" pointer-events="visible" data-name="l_ram">
+
+<text text-anchor="start" x="1391.97" y="-624.8" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">s_ram_addr_a / data / we</text>
+</g>
+<!-- g_vid -->
+<g id="node114" class="node" pointer-events="visible" data-name="g_vid">
+
+<path fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2" d="M2157.5,-330C2157.5,-330 1236.5,-330 1236.5,-330 1230.5,-330 1224.5,-324 1224.5,-318 1224.5,-318 1224.5,-27 1224.5,-27 1224.5,-21 1230.5,-15 1236.5,-15 1236.5,-15 2157.5,-15 2157.5,-15 2163.5,-15 2169.5,-21 2169.5,-27 2169.5,-27 2169.5,-318 2169.5,-318 2169.5,-324 2163.5,-330 2157.5,-330" style=""/>
+</g>
+<!-- g_vid_t -->
+<g id="node115" class="node" pointer-events="visible" data-name="g_vid_t">
+
+<text text-anchor="start" x="1234.84" y="-312.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Video output</text>
+</g>
+<!-- g_pins_out -->
+<g id="node116" class="node" pointer-events="visible" data-name="g_pins_out">
+
+<path fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" d="M2358,-330C2358,-330 2212,-330 2212,-330 2206,-330 2200,-324 2200,-318 2200,-318 2200,-27 2200,-27 2200,-21 2206,-15 2212,-15 2212,-15 2358,-15 2358,-15 2364,-15 2370,-21 2370,-27 2370,-27 2370,-318 2370,-318 2370,-324 2364,-330 2358,-330" style=""/>
+</g>
+<!-- g_pins_out_t -->
+<g id="node117" class="node" pointer-events="visible" data-name="g_pins_out_t">
+
+<text text-anchor="start" x="2209.67" y="-312.7" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="12.00" style="">Board pins (HDMI out)</text>
+</g>
+<!-- hdmi0 -->
+<g id="node118" class="node" pointer-events="visible" data-name="hdmi0">
+
+<polygon fill="#dbeafe" stroke="#2563eb" stroke-width="2" points="1625,-315 1365,-315 1365,-70 1625,-70 1625,-315" style=""/>
+</g>
+<!-- hdmi0_t -->
+<g id="node119" class="node" pointer-events="visible" data-name="hdmi0_t">
+
+<text text-anchor="start" x="1372.84" y="-298.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">hdmi0</text>
+<text text-anchor="start" x="1405.23" y="-298.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : hdmi_controler</text>
+</g>
+<!-- hdmi_generic -->
+<g id="node120" class="node" pointer-events="visible" data-name="hdmi_generic">
+
+<text text-anchor="start" x="1423.71" y="-275.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">generic: h_res, v_res, h_sync, h_fp,</text>
+<text text-anchor="start" x="1445.22" y="-264.4" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">h_bp, v_sync, v_fp, v_bp</text>
+</g>
+<!-- hdmi_clk -->
+<g id="node121" class="node" pointer-events="visible" data-name="hdmi_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1451,-249.5 1375,-249.5 1375,-229.5 1451,-229.5 1451,-249.5" style=""/>
+<text text-anchor="start" x="1403" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- hdmi_rst -->
+<g id="node122" class="node" pointer-events="visible" data-name="hdmi_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1451,-223.5 1375,-223.5 1375,-203.5 1451,-203.5 1451,-223.5" style=""/>
+<text text-anchor="start" x="1397.99" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- hdmi_clk_src -->
+<g id="node123" class="node" pointer-events="visible" data-name="hdmi_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1340,-239.5 1317.5,-249.5 1272.5,-249.5 1250,-239.5 1272.5,-229.5 1317.5,-229.5 1340,-239.5" style=""/>
+<text text-anchor="start" x="1276.23" y="-237.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- hdmi_rst_src -->
+<g id="node124" class="node" pointer-events="visible" data-name="hdmi_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1340,-213.5 1317.5,-223.5 1272.5,-223.5 1250,-213.5 1272.5,-203.5 1317.5,-203.5 1340,-213.5" style=""/>
+<text text-anchor="start" x="1278.99" y="-211.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- hdmi_hs -->
+<g id="node125" class="node" pointer-events="visible" data-name="hdmi_hs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-249.5 1515,-249.5 1515,-229.5 1615,-229.5 1615,-249.5" style=""/>
+<text text-anchor="start" x="1540.54" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_hs</text>
+</g>
+<!-- hdmi_vs -->
+<g id="node126" class="node" pointer-events="visible" data-name="hdmi_vs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-223.5 1515,-223.5 1515,-203.5 1615,-203.5 1615,-223.5" style=""/>
+<text text-anchor="start" x="1540.82" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_vs</text>
+</g>
+<!-- hdmi_de -->
+<g id="node127" class="node" pointer-events="visible" data-name="hdmi_de">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-197.5 1515,-197.5 1515,-177.5 1615,-177.5 1615,-197.5" style=""/>
+<text text-anchor="start" x="1540.26" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_de</text>
+</g>
+<!-- hdmi_pen -->
+<g id="node128" class="node" pointer-events="visible" data-name="hdmi_pen">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-171.5 1515,-171.5 1515,-151.5 1615,-151.5 1615,-171.5" style=""/>
+<text text-anchor="start" x="1540.81" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_pixel_en</text>
+</g>
+<!-- hdmi_addr -->
+<g id="node129" class="node" pointer-events="visible" data-name="hdmi_addr">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-145.5 1515,-145.5 1515,-125.5 1615,-125.5 1615,-145.5" style=""/>
+<text text-anchor="start" x="1528.59" y="-132.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_pixel_address</text>
+</g>
+<!-- hdmi_x -->
+<g id="node130" class="node" pointer-events="visible" data-name="hdmi_x">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-119.5 1515,-119.5 1515,-99.5 1615,-99.5 1615,-119.5" style=""/>
+<text text-anchor="start" x="1537.48" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_x_counter</text>
+</g>
+<!-- hdmi_y -->
+<g id="node131" class="node" pointer-events="visible" data-name="hdmi_y">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1615,-93.5 1515,-93.5 1515,-73.5 1615,-73.5 1615,-93.5" style=""/>
+<text text-anchor="start" x="1537.48" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_y_counter</text>
+</g>
+<!-- dst_addr -->
+<g id="node132" class="node" pointer-events="visible" data-name="dst_addr">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1757.5,-135.5 1728.75,-145.5 1671.25,-145.5 1642.5,-135.5 1671.25,-125.5 1728.75,-125.5 1757.5,-135.5" style=""/>
+<text text-anchor="start" x="1664.98" y="-133.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_pixel_address</text>
+</g>
+<!-- dst_pen -->
+<g id="node133" class="node" pointer-events="visible" data-name="dst_pen">
+
+<text text-anchor="start" x="1641.88" y="-159.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00" fill="#64748b" style="">open</text>
+</g>
+<!-- dst_x -->
+<g id="node134" class="node" pointer-events="visible" data-name="dst_x">
+
+<text text-anchor="start" x="1641.88" y="-107.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00" fill="#64748b" style="">open</text>
+</g>
+<!-- dst_y -->
+<g id="node135" class="node" pointer-events="visible" data-name="dst_y">
+
+<text text-anchor="start" x="1641.88" y="-81.5" font-family="Helvetica,sans-Serif" font-style="italic" font-size="10.00" fill="#64748b" style="">open</text>
+</g>
+<!-- color0 -->
+<g id="node136" class="node" pointer-events="visible" data-name="color0">
+
+<polygon fill="#ccfbf1" stroke="#0d9488" stroke-width="2" points="2065,-315 1835,-315 1835,-30 2065,-30 2065,-315" style=""/>
+</g>
+<!-- color0_t -->
+<g id="node137" class="node" pointer-events="visible" data-name="color0_t">
+
+<text text-anchor="start" x="1842.62" y="-298.6" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00" style="">color0</text>
+<text text-anchor="start" x="1875.63" y="-298.6" font-family="Helvetica,sans-Serif" font-size="11.00" style=""> : pixel_color</text>
+</g>
+<!-- color_note -->
+<g id="node138" class="node" pointer-events="visible" data-name="color_note">
+
+<text text-anchor="start" x="1902.84" y="-277.2" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">'1' → x"FFFFFF" (white)</text>
+<text text-anchor="start" x="1904.31" y="-266.4" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#475569" style="">'0' → x"000000" (black)</text>
+</g>
+<!-- color_hs -->
+<g id="node139" class="node" pointer-events="visible" data-name="color_hs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-249.5 1845,-249.5 1845,-229.5 1921,-229.5 1921,-249.5" style=""/>
+<text text-anchor="start" x="1860.21" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_hdmi_hs</text>
+</g>
+<!-- color_vs -->
+<g id="node140" class="node" pointer-events="visible" data-name="color_vs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-223.5 1845,-223.5 1845,-203.5 1921,-203.5 1921,-223.5" style=""/>
+<text text-anchor="start" x="1860.49" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_hdmi_vs</text>
+</g>
+<!-- color_de -->
+<g id="node141" class="node" pointer-events="visible" data-name="color_de">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-197.5 1845,-197.5 1845,-177.5 1921,-177.5 1921,-197.5" style=""/>
+<text text-anchor="start" x="1859.93" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_hdmi_de</text>
+</g>
+<!-- color_in -->
+<g id="node142" class="node" pointer-events="visible" data-name="color_in">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-171.5 1845,-171.5 1845,-151.5 1921,-151.5 1921,-171.5" style=""/>
+<text text-anchor="start" x="1868.83" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_pixel</text>
+</g>
+<!-- color_ohs -->
+<g id="node143" class="node" pointer-events="visible" data-name="color_ohs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="2055,-249.5 1955,-249.5 1955,-229.5 2055,-229.5 2055,-249.5" style=""/>
+<text text-anchor="start" x="1980.54" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_hs</text>
+</g>
+<!-- color_ovs -->
+<g id="node144" class="node" pointer-events="visible" data-name="color_ovs">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="2055,-223.5 1955,-223.5 1955,-203.5 2055,-203.5 2055,-223.5" style=""/>
+<text text-anchor="start" x="1980.82" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_vs</text>
+</g>
+<!-- color_ode -->
+<g id="node145" class="node" pointer-events="visible" data-name="color_ode">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="2055,-197.5 1955,-197.5 1955,-177.5 2055,-177.5 2055,-197.5" style=""/>
+<text text-anchor="start" x="1980.26" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_de</text>
+</g>
+<!-- color_out -->
+<g id="node146" class="node" pointer-events="visible" data-name="color_out">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="2055,-171.5 1955,-171.5 1955,-151.5 2055,-151.5 2055,-171.5" style=""/>
+<text text-anchor="start" x="1974.7" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_color [23:0]</text>
+</g>
+<!-- color_clk -->
+<g id="node147" class="node" pointer-events="visible" data-name="color_clk">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-79.5 1845,-79.5 1845,-59.5 1921,-59.5 1921,-79.5" style=""/>
+<text text-anchor="start" x="1873" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_clk</text>
+</g>
+<!-- color_rst -->
+<g id="node148" class="node" pointer-events="visible" data-name="color_rst">
+
+<polygon fill="#ffffff" stroke="#94a3b8" points="1921,-53.5 1845,-53.5 1845,-33.5 1921,-33.5 1921,-53.5" style=""/>
+<text text-anchor="start" x="1867.99" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">i_rst_n</text>
+</g>
+<!-- color_clk_src -->
+<g id="node149" class="node" pointer-events="visible" data-name="color_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1820,-69.5 1797.5,-79.5 1752.5,-79.5 1730,-69.5 1752.5,-59.5 1797.5,-59.5 1820,-69.5" style=""/>
+<text text-anchor="start" x="1756.23" y="-67.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- color_rst_src -->
+<g id="node150" class="node" pointer-events="visible" data-name="color_rst_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1820,-43.5 1797.5,-53.5 1752.5,-53.5 1730,-43.5 1752.5,-33.5 1797.5,-33.5 1820,-43.5" style=""/>
+<text text-anchor="start" x="1758.99" y="-41.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_rst_n</text>
+</g>
+<!-- color_src -->
+<g id="node151" class="node" pointer-events="visible" data-name="color_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="1822.5,-161.5 1796.25,-171.5 1743.75,-171.5 1717.5,-161.5 1743.75,-151.5 1796.25,-151.5 1822.5,-161.5" style=""/>
+<text text-anchor="start" x="1740.73" y="-159.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_pixel_value</text>
+</g>
+<!-- pin_tx_clk -->
+<g id="node152" class="node" pointer-events="visible" data-name="pin_tx_clk">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="2347.67,-272.83 2215,-272.83 2215,-258.17 2347.67,-258.17 2355,-265.5 2347.67,-272.83" style=""/>
+<text text-anchor="middle" x="2285" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_tx_clk</text>
+</g>
+<!-- pin_tx_hs -->
+<g id="node153" class="node" pointer-events="visible" data-name="pin_tx_hs">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="2347.67,-246.83 2215,-246.83 2215,-232.17 2347.67,-232.17 2355,-239.5 2347.67,-246.83" style=""/>
+<text text-anchor="middle" x="2285" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_tx_hs</text>
+</g>
+<!-- pin_tx_vs -->
+<g id="node154" class="node" pointer-events="visible" data-name="pin_tx_vs">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="2347.67,-220.83 2215,-220.83 2215,-206.17 2347.67,-206.17 2355,-213.5 2347.67,-220.83" style=""/>
+<text text-anchor="middle" x="2285" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_tx_vs</text>
+</g>
+<!-- pin_tx_de -->
+<g id="node155" class="node" pointer-events="visible" data-name="pin_tx_de">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="2347.67,-194.83 2215,-194.83 2215,-180.17 2347.67,-180.17 2355,-187.5 2347.67,-194.83" style=""/>
+<text text-anchor="middle" x="2285" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_tx_de</text>
+</g>
+<!-- pin_tx_d -->
+<g id="node156" class="node" pointer-events="visible" data-name="pin_tx_d">
+
+<polygon fill="#e2e8f0" stroke="#94a3b8" points="2347.67,-168.83 2215,-168.83 2215,-154.17 2347.67,-154.17 2355,-161.5 2347.67,-168.83" style=""/>
+<text text-anchor="middle" x="2285" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00" style="">o_hdmi_tx_d [23:0]</text>
+</g>
+<!-- tx_clk_src -->
+<g id="node157" class="node" pointer-events="visible" data-name="tx_clk_src">
+
+<polygon fill="#fef9c3" stroke="#eab308" points="2165,-265.5 2142.5,-275.5 2097.5,-275.5 2075,-265.5 2097.5,-255.5 2142.5,-255.5 2165,-265.5" style=""/>
+<text text-anchor="start" x="2101.23" y="-263.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00" style="">s_clk_27</text>
+</g>
+<!-- pin_clk&#45;&gt;pll_refclk -->
+<g id="edge1" class="edge" data-name="pin_clk-&gt;pll_refclk">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-1004.5C196.48,-1004.5 275.93,-1004.5 325.94,-1004.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-1006.95 332.65,-1004.5 325.65,-1002.05 325.65,-1006.95" style=""/>
+</g>
+<!-- pin_rst&#45;&gt;pll_rst -->
+<g id="edge2" class="edge" data-name="pin_rst-&gt;pll_rst">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-969.5C196.48,-969.5 275.93,-969.5 325.94,-969.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-971.95 332.65,-969.5 325.65,-967.05 325.65,-971.95" style=""/>
+</g>
+<!-- pin_lca&#45;&gt;encx_a -->
+<g id="edge9" class="edge" data-name="pin_lca-&gt;encx_a">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-839.5C196.48,-839.5 275.93,-839.5 325.94,-839.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-841.95 332.65,-839.5 325.65,-837.05 325.65,-841.95" style=""/>
+</g>
+<!-- pin_lcb&#45;&gt;encx_b -->
+<g id="edge10" class="edge" data-name="pin_lcb-&gt;encx_b">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-813.5C196.48,-813.5 275.93,-813.5 325.94,-813.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-815.95 332.65,-813.5 325.65,-811.05 325.65,-815.95" style=""/>
+</g>
+<!-- pin_rca&#45;&gt;ency_a -->
+<g id="edge11" class="edge" data-name="pin_rca-&gt;ency_a">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-684.5C196.48,-684.5 275.93,-684.5 325.94,-684.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-686.95 332.65,-684.5 325.65,-682.05 325.65,-686.95" style=""/>
+</g>
+<!-- pin_rcb&#45;&gt;ency_b -->
+<g id="edge12" class="edge" data-name="pin_rcb-&gt;ency_b">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.4,-658.5C196.48,-658.5 275.93,-658.5 325.94,-658.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="325.65,-660.95 332.65,-658.5 325.65,-656.05 325.65,-660.95" style=""/>
+</g>
+<!-- pin_lpb&#45;&gt;era_start -->
+<g id="edge19" class="edge" data-name="pin_lpb-&gt;era_start">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M140.28,-494.5C269.22,-494.5 553.8,-494.5 666.1,-494.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="665.88,-496.95 672.88,-494.5 665.88,-492.05 665.88,-496.95" style=""/>
+</g>
+<!-- pll_clk27&#45;&gt;net_clk -->
+<g id="edge3" class="edge" data-name="pll_clk27-&gt;net_clk">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M515.5,-1004.5C541.2,-1004.5 575.53,-1004.5 604.8,-1004.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="604.75,-1006.95 611.75,-1004.5 604.75,-1002.05 604.75,-1006.95" style=""/>
+</g>
+<!-- pll_locked&#45;&gt;net_rst -->
+<g id="edge4" class="edge" data-name="pll_locked-&gt;net_rst">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M515.5,-969.5C541.2,-969.5 575.53,-969.5 604.8,-969.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="604.75,-971.95 611.75,-969.5 604.75,-967.05 604.75,-971.95" style=""/>
+</g>
+<!-- encx_pos&#45;&gt;sty_x -->
+<g id="edge15" class="edge" data-name="encx_pos-&gt;sty_x">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M515.44,-826.5C555.99,-826.5 619.98,-826.5 664.09,-826.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="663.94,-828.95 670.94,-826.5 663.94,-824.05 663.94,-828.95" style=""/>
+</g>
+<!-- encx_clk_src&#45;&gt;encx_clk -->
+<g id="edge5" class="edge" data-name="encx_clk_src-&gt;encx_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M300.96,-787.5C309.13,-787.5 317.66,-787.5 325.87,-787.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="325.64,-789.95 332.64,-787.5 325.64,-785.05 325.64,-789.95" style=""/>
+</g>
+<!-- encx_rst_src&#45;&gt;encx_rst -->
+<g id="edge6" class="edge" data-name="encx_rst_src-&gt;encx_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M300.96,-761.5C309.13,-761.5 317.66,-761.5 325.87,-761.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="325.64,-763.95 332.64,-761.5 325.64,-759.05 325.64,-763.95" style=""/>
+</g>
+<!-- ency_pos&#45;&gt;sty_y -->
+<g id="edge16" class="edge" data-name="ency_pos-&gt;sty_y">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M515.44,-671.5C555.99,-671.5 619.98,-671.5 664.09,-671.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="663.94,-673.95 670.94,-671.5 663.94,-669.05 663.94,-673.95" style=""/>
+</g>
+<!-- ency_clk_src&#45;&gt;ency_clk -->
+<g id="edge7" class="edge" data-name="ency_clk_src-&gt;ency_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M300.96,-632.5C309.13,-632.5 317.66,-632.5 325.87,-632.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="325.64,-634.95 332.64,-632.5 325.64,-630.05 325.64,-634.95" style=""/>
+</g>
+<!-- ency_rst_src&#45;&gt;ency_rst -->
+<g id="edge8" class="edge" data-name="ency_rst_src-&gt;ency_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M300.96,-606.5C309.13,-606.5 317.66,-606.5 325.87,-606.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="325.64,-608.95 332.64,-606.5 325.64,-604.05 325.64,-608.95" style=""/>
+</g>
+<!-- sty_bus&#45;&gt;a_in0 -->
+<g id="edge20" class="edge" data-name="sty_bus-&gt;a_in0">
+
+<path fill="none" stroke="#475569" stroke-width="2.8" d="M865.22,-749.5C901.99,-749.5 955.32,-749.5 978.51,-749.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.8" points="978.27,-751.95 985.27,-749.5 978.27,-747.05 978.27,-751.95" style=""/>
+</g>
+<!-- sty_clk_src&#45;&gt;sty_clk -->
+<g id="edge13" class="edge" data-name="sty_clk_src-&gt;sty_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M640.96,-619.5C649.13,-619.5 657.66,-619.5 665.87,-619.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="665.64,-621.95 672.64,-619.5 665.64,-617.05 665.64,-621.95" style=""/>
+</g>
+<!-- sty_rst_src&#45;&gt;sty_rst -->
+<g id="edge14" class="edge" data-name="sty_rst_src-&gt;sty_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M640.96,-593.5C649.13,-593.5 657.66,-593.5 665.87,-593.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="665.64,-595.95 672.64,-593.5 665.64,-591.05 665.64,-595.95" style=""/>
+</g>
+<!-- era_bus&#45;&gt;a_in1 -->
+<g id="edge21" class="edge" data-name="era_bus-&gt;a_in1">
+
+<path fill="none" stroke="#475569" stroke-width="2.8" d="M865.22,-484.5C901.99,-484.5 955.32,-484.5 978.51,-484.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.8" points="978.27,-486.95 985.27,-484.5 978.27,-482.05 978.27,-486.95" style=""/>
+</g>
+<!-- era_busy&#45;&gt;a_sel -->
+<g id="edge22" class="edge" data-name="era_busy-&gt;a_sel">
+
+<path fill="none" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,2" d="M865.18,-424.5C921.23,-424.5 1020.16,-424.5 1029.32,-424.5" style=""/>
+</g>
+<!-- era_clk_src&#45;&gt;era_clk -->
+<g id="edge17" class="edge" data-name="era_clk_src-&gt;era_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M640.96,-468.5C649.13,-468.5 657.66,-468.5 665.87,-468.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="665.64,-470.95 672.64,-468.5 665.64,-466.05 665.64,-470.95" style=""/>
+</g>
+<!-- era_rst_src&#45;&gt;era_rst -->
+<g id="edge18" class="edge" data-name="era_rst_src-&gt;era_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M640.96,-442.5C649.13,-442.5 657.66,-442.5 665.87,-442.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="665.64,-444.95 672.64,-442.5 665.64,-440.05 665.64,-444.95" style=""/>
+</g>
+<!-- mux&#45;&gt;wreg_in -->
+<g id="edge26" class="edge" data-name="mux-&gt;wreg_in">
+
+<path fill="none" stroke="#475569" stroke-width="2.8" d="M1070.32,-616.67C1110.13,-616.84 1171.09,-617.11 1213.75,-617.29" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.8" points="1213.47,-619.74 1220.48,-617.32 1213.49,-614.84 1213.47,-619.74" style=""/>
+</g>
+<!-- a_sel&#45;&gt;mux -->
+<g id="edge23" class="edge" data-name="a_sel-&gt;mux">
+
+<path fill="none" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,2" d="M1030,-425.36C1030,-429.61 1030,-449.28 1030,-474.49" style=""/>
+<polygon fill="#7c3aed" stroke="#7c3aed" stroke-width="1.3" points="1027.55,-474.27 1030,-481.27 1032.45,-474.27 1027.55,-474.27" style=""/>
+</g>
+<!-- wreg_out&#45;&gt;dp_bus -->
+<g id="edge27" class="edge" data-name="wreg_out-&gt;dp_bus">
+
+<path fill="none" stroke="#475569" stroke-width="2.8" d="M1365.43,-617.5C1408.94,-617.5 1480.05,-617.5 1528.38,-617.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.8" points="1528.3,-619.95 1535.3,-617.5 1528.3,-615.05 1528.3,-619.95" style=""/>
+</g>
+<!-- wreg_clk_src&#45;&gt;wreg_clk -->
+<g id="edge24" class="edge" data-name="wreg_clk_src-&gt;wreg_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1195.96,-567.5C1202.51,-567.5 1209.26,-567.5 1215.84,-567.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1215.7,-569.95 1222.7,-567.5 1215.7,-565.05 1215.7,-569.95" style=""/>
+</g>
+<!-- wreg_rst_src&#45;&gt;wreg_rst -->
+<g id="edge25" class="edge" data-name="wreg_rst_src-&gt;wreg_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1195.96,-541.5C1202.51,-541.5 1209.26,-541.5 1215.84,-541.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1215.7,-543.95 1222.7,-541.5 1215.7,-539.05 1215.7,-543.95" style=""/>
+</g>
+<!-- dp_q_a&#45;&gt;dst_q_a -->
+<g id="edge29" class="edge" data-name="dp_q_a-&gt;dst_q_a">
+
+<path fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5,2" d="M1720.35,-617.5C1735.91,-617.5 1753.18,-617.5 1765.96,-617.5" style=""/>
+</g>
+<!-- dp_q_b&#45;&gt;dst_q_b -->
+<g id="edge34" class="edge" data-name="dp_q_b-&gt;dst_q_b">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M1720.31,-502.5C1725.4,-502.5 1730.72,-502.5 1736.09,-502.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="1735.81,-504.95 1742.81,-502.5 1735.81,-500.05 1735.81,-504.95" style=""/>
+</g>
+<!-- src_clk_a&#45;&gt;dp_clk_a -->
+<g id="edge28" class="edge" data-name="src_clk_a-&gt;dp_clk_a">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1496.21,-567.5C1507.51,-567.5 1519.62,-567.5 1530.96,-567.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1530.89,-569.95 1537.89,-567.5 1530.89,-565.05 1530.89,-569.95" style=""/>
+</g>
+<!-- src_addr_b&#45;&gt;dp_addr_b -->
+<g id="edge30" class="edge" data-name="src_addr_b-&gt;dp_addr_b">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M1498.92,-502.5C1509.04,-502.5 1519.45,-502.5 1529.26,-502.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="1528.99,-504.95 1535.99,-502.5 1528.99,-500.05 1528.99,-504.95" style=""/>
+</g>
+<!-- src_we_b&#45;&gt;dp_we_b -->
+<g id="edge31" class="edge" data-name="src_we_b-&gt;dp_we_b">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M1495.35,-476.5C1505.64,-476.5 1518.58,-476.5 1531.16,-476.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="1530.8,-478.95 1537.8,-476.5 1530.8,-474.05 1530.8,-478.95" style=""/>
+</g>
+<!-- src_data_b&#45;&gt;dp_data_b -->
+<g id="edge32" class="edge" data-name="src_data_b-&gt;dp_data_b">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M1495.35,-450.5C1505.64,-450.5 1518.58,-450.5 1531.16,-450.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="1530.8,-452.95 1537.8,-450.5 1530.8,-448.05 1530.8,-452.95" style=""/>
+</g>
+<!-- src_clk_b&#45;&gt;dp_clk_b -->
+<g id="edge33" class="edge" data-name="src_clk_b-&gt;dp_clk_b">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1496.21,-424.5C1507.51,-424.5 1519.62,-424.5 1530.96,-424.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1530.89,-426.95 1537.89,-424.5 1530.89,-422.05 1530.89,-426.95" style=""/>
+</g>
+<!-- hdmi_clk_src&#45;&gt;hdmi_clk -->
+<g id="edge35" class="edge" data-name="hdmi_clk_src-&gt;hdmi_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1340.96,-239.5C1349.13,-239.5 1357.66,-239.5 1365.87,-239.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1365.64,-241.95 1372.64,-239.5 1365.64,-237.05 1365.64,-241.95" style=""/>
+</g>
+<!-- hdmi_rst_src&#45;&gt;hdmi_rst -->
+<g id="edge36" class="edge" data-name="hdmi_rst_src-&gt;hdmi_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1340.96,-213.5C1349.13,-213.5 1357.66,-213.5 1365.87,-213.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1365.64,-215.95 1372.64,-213.5 1365.64,-211.05 1365.64,-215.95" style=""/>
+</g>
+<!-- hdmi_hs&#45;&gt;color_hs -->
+<g id="edge39" class="edge" data-name="hdmi_hs-&gt;color_hs">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M1615.39,-239.5C1676.02,-239.5 1777.03,-239.5 1836.07,-239.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="1835.86,-241.95 1842.86,-239.5 1835.86,-237.05 1835.86,-241.95" style=""/>
+</g>
+<!-- hdmi_vs&#45;&gt;color_vs -->
+<g id="edge40" class="edge" data-name="hdmi_vs-&gt;color_vs">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M1615.39,-213.5C1676.02,-213.5 1777.03,-213.5 1836.07,-213.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="1835.86,-215.95 1842.86,-213.5 1835.86,-211.05 1835.86,-215.95" style=""/>
+</g>
+<!-- hdmi_de&#45;&gt;color_de -->
+<g id="edge41" class="edge" data-name="hdmi_de-&gt;color_de">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M1615.39,-187.5C1676.02,-187.5 1777.03,-187.5 1836.07,-187.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="1835.86,-189.95 1842.86,-187.5 1835.86,-185.05 1835.86,-189.95" style=""/>
+</g>
+<!-- hdmi_pen&#45;&gt;dst_pen -->
+<g id="edge43" class="edge" data-name="hdmi_pen-&gt;dst_pen">
+
+<path fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5,2" d="M1615.42,-161.5C1622.03,-161.5 1628.44,-161.5 1634.04,-161.5" style=""/>
+</g>
+<!-- hdmi_addr&#45;&gt;dst_addr -->
+<g id="edge42" class="edge" data-name="hdmi_addr-&gt;dst_addr">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M1615.27,-135.5C1620.25,-135.5 1625.37,-135.5 1630.51,-135.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="1630.4,-137.95 1637.4,-135.5 1630.4,-133.05 1630.4,-137.95" style=""/>
+</g>
+<!-- hdmi_x&#45;&gt;dst_x -->
+<g id="edge44" class="edge" data-name="hdmi_x-&gt;dst_x">
+
+<path fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5,2" d="M1615.42,-109.5C1622.03,-109.5 1628.44,-109.5 1634.04,-109.5" style=""/>
+</g>
+<!-- hdmi_y&#45;&gt;dst_y -->
+<g id="edge45" class="edge" data-name="hdmi_y-&gt;dst_y">
+
+<path fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5,2" d="M1615.42,-83.5C1622.03,-83.5 1628.44,-83.5 1634.04,-83.5" style=""/>
+</g>
+<!-- color_ohs&#45;&gt;pin_tx_hs -->
+<g id="edge48" class="edge" data-name="color_ohs-&gt;pin_tx_hs">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M2055.38,-239.5C2097.18,-239.5 2157.37,-239.5 2205.63,-239.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="2205.53,-241.95 2212.53,-239.5 2205.53,-237.05 2205.53,-241.95" style=""/>
+</g>
+<!-- color_ovs&#45;&gt;pin_tx_vs -->
+<g id="edge49" class="edge" data-name="color_ovs-&gt;pin_tx_vs">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M2055.38,-213.5C2097.18,-213.5 2157.37,-213.5 2205.63,-213.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="2205.53,-215.95 2212.53,-213.5 2205.53,-211.05 2205.53,-215.95" style=""/>
+</g>
+<!-- color_ode&#45;&gt;pin_tx_de -->
+<g id="edge50" class="edge" data-name="color_ode-&gt;pin_tx_de">
+
+<path fill="none" stroke="#475569" stroke-width="1.3" d="M2055.38,-187.5C2097.18,-187.5 2157.37,-187.5 2205.63,-187.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.3" points="2205.53,-189.95 2212.53,-187.5 2205.53,-185.05 2205.53,-189.95" style=""/>
+</g>
+<!-- color_out&#45;&gt;pin_tx_d -->
+<g id="edge51" class="edge" data-name="color_out-&gt;pin_tx_d">
+
+<path fill="none" stroke="#475569" stroke-width="2.8" d="M2055.38,-161.5C2096.57,-161.5 2155.62,-161.5 2203.52,-161.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.8" points="2203.26,-163.95 2210.26,-161.5 2203.26,-159.05 2203.26,-163.95" style=""/>
+</g>
+<!-- color_clk_src&#45;&gt;color_clk -->
+<g id="edge37" class="edge" data-name="color_clk_src-&gt;color_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1821.11,-69.5C1825.99,-69.5 1830.95,-69.5 1835.83,-69.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1835.54,-71.95 1842.54,-69.5 1835.54,-67.05 1835.54,-71.95" style=""/>
+</g>
+<!-- color_rst_src&#45;&gt;color_rst -->
+<g id="edge38" class="edge" data-name="color_rst_src-&gt;color_rst">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M1821.11,-43.5C1825.99,-43.5 1830.95,-43.5 1835.83,-43.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="1835.54,-45.95 1842.54,-43.5 1835.54,-41.05 1835.54,-45.95" style=""/>
+</g>
+<!-- color_src&#45;&gt;color_in -->
+<g id="edge46" class="edge" data-name="color_src-&gt;color_in">
+
+<path fill="none" stroke="#475569" stroke-width="2.4" d="M1823.85,-161.5C1827.38,-161.5 1830.91,-161.5 1834.41,-161.5" style=""/>
+<polygon fill="#475569" stroke="#475569" stroke-width="2.4" points="1834.09,-163.95 1841.09,-161.5 1834.09,-159.05 1834.09,-163.95" style=""/>
+</g>
+<!-- tx_clk_src&#45;&gt;pin_tx_clk -->
+<g id="edge47" class="edge" data-name="tx_clk_src-&gt;pin_tx_clk">
+
+<path fill="none" stroke="#a16207" stroke-width="1.3" d="M2165.96,-265.5C2178.32,-265.5 2192.05,-265.5 2205.67,-265.5" style=""/>
+<polygon fill="#a16207" stroke="#a16207" stroke-width="1.3" points="2205.61,-267.95 2212.61,-265.5 2205.61,-263.05 2205.61,-267.95" style=""/>
+</g>
+</g>
+</svg>
