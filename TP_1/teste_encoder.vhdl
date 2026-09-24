@@ -3,21 +3,23 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity teste_encoder is
+    genric (
+        register_size : positive := 10
+    );
     port (
         i_clk_50 : in  std_logic;
         i_rst_n  : in  std_logic;
         i_a      : in  std_logic;
         i_b      : in  std_logic;
-        o_leds   : out std_logic_vector(9 downto 0)
+        o_leds   : out std_logic_vector(register_size - 1 downto 0)
     );
 end entity teste_encoder;
 
 architecture rtl of teste_encoder is
     signal s_clk_div : std_logic;
-    signal s_position : std_logic_vector(9 downto 0);
+    signal s_position : std_logic_vector(register_size - 1 downto 0);
 begin
 
-    -- divide the 50 MHz clock by 2 to get a 25 MHz clock
     u_div : entity work.frequency_divider
         generic map (
             DIVISOR => 2
@@ -28,10 +30,9 @@ begin
             o_clk   => s_clk_div
         );
 
-    -- enconder with 10-bit position register
     u_encoder : entity work.encoder
         generic map (
-            register_size => 10
+            register_size => register_size
         )
         port map (
             i_clk      => s_clk_div,

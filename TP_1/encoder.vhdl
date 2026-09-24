@@ -16,23 +16,20 @@ entity encoder is
 end entity encoder;
 
 architecture rtl of encoder is
-    -- synchronization registers
+
     signal r_a1 : std_logic := '0';
     signal r_a2 : std_logic := '0';
     signal r_b1 : std_logic := '0';
     signal r_b2 : std_logic := '0';
 
-    -- edge detection
     signal s_rising_a  : std_logic;
     signal s_falling_a : std_logic;
     signal s_rising_b  : std_logic;
     signal s_falling_b : std_logic;
 
-    -- position register
     signal r_position : signed(register_size - 1 downto 0) := (others => '0');
 begin
 
-    -- synchronize the asynchronous inputs i_a and i_b
     process(i_clk, i_rst_n)
     begin
         if (i_rst_n = '0') then
@@ -48,13 +45,11 @@ begin
         end if;
     end process;
 
-    -- detect rising and falling edges of A and B
     s_rising_a  <= r_a1 AND (NOT r_a2);
     s_falling_a <= (NOT r_a1) AND r_a2;
     s_rising_b  <= r_b1 AND (NOT r_b2);
     s_falling_b <= (NOT r_b1) AND r_b2;
 
-    -- update the position based on the edges detected
     process(i_clk, i_rst_n)
     begin
         if (i_rst_n = '0') then
