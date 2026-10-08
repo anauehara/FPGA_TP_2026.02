@@ -1,0 +1,31 @@
+@ -0,0 +1,30 @@
+# -------------------------------------------------------------------------- #
+# Pin assignments for encoder_clk (encoder + frequency_divider test)
+# Reaproveitados de Class_1/blink_led/led_blink.qsf (i_clk, i_rst_n, o_leds)
+# e TP_1/telecran/telecran.qsf (i_left_ch_a, i_left_ch_b, i_left_pb)
+#
+# Use "Assignments -> Import Assignments..." no Quartus para importar
+# estas linhas para o seu projeto existente.
+# -------------------------------------------------------------------------- #
+
+set_location_assignment PIN_V11  -to i_clk
+set_location_assignment PIN_AH17 -to i_rst_n
+
+set_location_assignment PIN_AF27 -to i_a
+set_location_assignment PIN_AF28 -to i_b
+set_location_assignment PIN_AH27 -to i_pb
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i_a
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i_b
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i_pb
+
+set_location_assignment PIN_AG15 -to o_leds[9]
+set_location_assignment PIN_AG18 -to o_leds[8]
+set_location_assignment PIN_AG20 -to o_leds[7]
+set_location_assignment PIN_AF22 -to o_leds[6]
+set_location_assignment PIN_AH21 -to o_leds[5]
+set_location_assignment PIN_AG23 -to o_leds[4]
+set_location_assignment PIN_AG25 -to o_leds[3]
+set_location_assignment PIN_AG26 -to o_leds[2]
+set_location_assignment PIN_AE25 -to o_leds[1]
+set_location_assignment PIN_AG28 -to o_leds[0]
