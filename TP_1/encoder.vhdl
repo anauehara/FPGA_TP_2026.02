@@ -11,6 +11,7 @@ entity encoder is
         i_rst_n    : in  std_logic;
         i_a        : in  std_logic;
         i_b        : in  std_logic;
+        i_pb       : in  std_logic;
         o_position : out std_logic_vector(register_size - 1 downto 0)
     );
 end entity encoder;
