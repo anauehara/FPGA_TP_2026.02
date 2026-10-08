@@ -17,6 +17,10 @@ add wave -color yellow uut/i_a
 add wave -color yellow uut/i_b
 
 add wave -divider Internal:
+add wave -radix unsigned uut/r_count
+add wave uut/r_enable
+add wave uut/r_a_sync
+add wave uut/r_b_sync
 add wave uut/r_a1
 add wave uut/r_a2
 add wave uut/r_b1
@@ -30,5 +34,5 @@ add wave -radix decimal uut/r_position
 add wave -divider Outputs:
 add wave -color green -radix decimal uut/o_position
 
-run 1000 ns
+run 23000 ns
 # adjust the run length above to whatever actually exercises this module's behavior
