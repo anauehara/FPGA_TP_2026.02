@@ -14,6 +14,7 @@ entity encoder is
         i_b        : in  std_logic;
         i_pb       : in  std_logic;
         o_position : out std_logic_vector(register_size - 1 downto 0)
+        o_pb       : out std_logic
     );
 end entity encoder;
 
@@ -36,6 +37,8 @@ architecture rtl of encoder is
     signal s_falling_b : std_logic;
 
     signal r_position : signed(register_size - 1 downto 0) := (others => '0');
+
+    signal s_pb_sync : std_logic := '0';
 begin
 
     process(i_clk, i_rst_n)
@@ -95,6 +98,19 @@ begin
             end if;
         end if;
     end process;
+
+    process(i_clk, i_rst_n)
+    begin
+        if (i_rst_n = '0') then
+            s_pb_sync <= '0';
+        elsif rising_edge(i_clk) then
+            s_pb_sync <= i_pb;
+        end if;
+    end process;
+
+    --adicionar de bounce tbm para o pb
+
+    o_pb <= s_pb_sync;
 
     o_position <= std_logic_vector(r_position);
 
