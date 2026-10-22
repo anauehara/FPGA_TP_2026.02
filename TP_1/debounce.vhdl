@@ -15,33 +15,34 @@ entity debounce is
 end entity debounce;
 
 architecture rtl of debounce is
-    signal s_btn_sync1 : std_logic := '0';
-    signal s_btn_sync2 : std_logic := '0';
+    signal r_cnt : natural range 0 to DEBOUNCE_TIME - 1 := 0;
+    signal r_stable : std_logic := '0';
+    signal r_last : std_logic := '0';
+    signal r_in_sync : std_logic := '0';
 
 begin
 
     process(i_clk, i_rst_n)
-        variable v_count : natural := 0;
     begin
         if (i_rst_n = '0') then
-            v_count := 0;
-            o_btn_db <= '0';
+            r_cnt <= 0;
+            r_stable <= '0';
+            r_last <= '0';
+            r_in_sync <= '0';
         elsif rising_edge(i_clk) then
-            s_btn_sync1 <= i_btn;
-            s_btn_sync2 <= s_btn_sync1;
-
-            
-
-            if (v_count = DEBOUNCE_TIME - 1) then
-                o_btn_db <= s_btn_sync2;
-                v_count := 0;
+            r_in_sync <= i_btn;
+            r_last <= r_in_sync;
+            if (r_last /= r_in_sync) then
+                r_cnt <= 0;
+            elsif (r_cnt >= DEBOUNCE_TIME - 1) then
+                    r_stable <= r_last;
             else
-                v_count := v_count + 1;
+                r_cnt <= r_cnt + 1;
             end if;
-
         end if;
-    
     end process;
+
+    o_btn_db <= r_stable;
 
 
 end architecture rtl;
