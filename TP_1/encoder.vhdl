@@ -13,7 +13,7 @@ entity encoder is
         i_a        : in  std_logic;
         i_b        : in  std_logic;
         i_pb       : in  std_logic;
-        o_position : out std_logic_vector(register_size - 1 downto 0)
+        o_position : out std_logic_vector(register_size - 1 downto 0);
         o_pb       : out std_logic
     );
 end entity encoder;
