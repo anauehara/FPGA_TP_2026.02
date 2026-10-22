@@ -103,7 +103,6 @@ architecture rtl of telecran is
 	port (   
 		i_clk_a        : in std_logic;
 		i_clk_b        : in std_logic;
-
 		i_data_a    : in std_logic_vector(data_width-1 downto 0);
 		i_data_b    : in std_logic_vector(data_width-1 downto 0);
 		i_addr_a    : in natural range 0 to mem_size-1;
@@ -137,6 +136,13 @@ architecture rtl of telecran is
 	signal s_cursor : std_logic;
 
 	constant pixel_size : natural := 4;
+
+	signal s_reset_n : std_logic := '1';
+
+	signal s_pb_left : std_logic;
+	signal s_pb_right : std_logic;
+
+	signal valor : std_logic_vector(0 downto 0) := "1";
 
 begin
 	o_leds <= (others => '0');
@@ -184,7 +190,7 @@ begin
 		i_b        => i_left_ch_b,
 		i_pb       => i_left_pb,
 		o_position => s_horizontal_sync(9 downto 0),
-		o_pb       => open
+		o_pb       => s_pb_left
 	);
 
 	encoder_vertical : component encoder
@@ -195,19 +201,18 @@ begin
 		i_b        => i_right_ch_b,
 		i_pb       => i_right_pb,
 		o_position => s_vertical_sync(9 downto 0),
-		o_pb       => open
+		o_pb       => s_pb_right
 	);
 
-	dpram0 : component dpram 
+	dpram0 : component dpram
 	generic map (
         mem_size   => h_res * v_res,
         data_width => 1
     )
-    port map (   
+    port map (
         i_clk_a     => s_clk_27,
         i_clk_b     => s_clk_27,
-
-        i_data_a    => "1",
+        i_data_a    => valor,
         i_data_b    => "0",
         i_addr_a    => s_addr_a,
         i_addr_b    => s_addr_b,
@@ -221,11 +226,44 @@ begin
 	s_pos_x <= (360 + to_integer(signed(s_horizontal_sync))) mod 720;
 	s_pos_y <= (240 + to_integer(signed(s_vertical_sync))) mod 480;
 
-	s_addr_a <= s_pos_y * h_res + s_pos_x;
+
+
+	process(s_clk_27, i_rst_n)
+	variable v_addr_a : natural range 0 to h_res * v_res - 1 := 0;
+	variable controler : std_logic := '0';
+	variable v_prev : std_logic := '1';
+	begin
+		if(i_rst_n = '0') then
+			s_addr_a <= 0;
+			valor <= "1";
+			v_addr_a := 0;
+			controler := '0';
+			v_prev := '1';
+		elsif rising_edge(s_clk_27) then
+			if (s_reset_n = '0' and v_prev = '1') then
+				controler := '1';
+			elsif (controler = '1') then
+				s_addr_a <= v_addr_a;
+				valor <= "0";
+				if (v_addr_a = h_res * v_res - 1) then
+					controler := '0';
+				end if;
+				v_addr_a := (v_addr_a + 1) mod (h_res * v_res);
+			else
+				s_addr_a <= s_pos_y * h_res + s_pos_x;
+				valor <= "1";
+			end if;
+
+			
+			v_prev := s_reset_n;
+		end if;
+	end process;
+
+	s_reset_n <= '0' when (s_pb_left = '1' or s_pb_right = '1') else '1';
 	
 
-	s_cursor <= '1' when (s_x_counter >= s_pos_x and s_x_counter < s_pos_x + pixel_size) and
-                     (s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
+	s_cursor <= '1' when 	(s_x_counter >= s_pos_x and s_x_counter < s_pos_x + pixel_size) and
+                    		(s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
             else '0';
 
 	o_hdmi_tx_d <= x"FFFFFF" when (s_cursor = '1' or s_q_b = "1") else x"000000";
