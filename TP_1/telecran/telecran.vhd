@@ -95,6 +95,26 @@ architecture rtl of telecran is
 	);
 	end component;
 
+	component dpram is 
+	generic (
+		mem_size    : natural := 720 * 480;
+		data_width  : natural := 8
+	);
+	port (   
+		i_clk_a        : in std_logic;
+		i_clk_b        : in std_logic;
+
+		i_data_a    : in std_logic_vector(data_width-1 downto 0);
+		i_data_b    : in std_logic_vector(data_width-1 downto 0);
+		i_addr_a    : in natural range 0 to mem_size-1;
+		i_addr_b    : in natural range 0 to mem_size-1;
+		i_we_a      : in std_logic := '1';
+		i_we_b      : in std_logic := '1';
+		o_q_a       : out std_logic_vector(data_width-1 downto 0);
+		o_q_b       : out std_logic_vector(data_width-1 downto 0)
+   );
+   end component;
+
 	constant h_res : natural := 720;
     constant v_res : natural := 480;
 
@@ -110,6 +130,11 @@ architecture rtl of telecran is
 
 	signal s_pos_x : natural range 0 to h_res - 1;
 	signal s_pos_y : natural range 0 to v_res - 1;
+
+	signal s_addr_a : natural range 0 to h_res * v_res -1;
+	signal s_addr_b : natural range 0 to h_res * v_res -1;
+	signal s_q_b : std_logic_vector(0 downto 0);
+	signal s_cursor : std_logic;
 
 	constant pixel_size : natural := 4;
 
@@ -144,7 +169,7 @@ begin
         o_hdmi_vs       => o_hdmi_tx_vs,
         o_hdmi_de       => o_hdmi_tx_de,
         o_pixel_en      => open,
-        o_pixel_address => open,
+        o_pixel_address => s_addr_b,
         o_x_counter     => s_x_counter,
         o_y_counter     => s_y_counter
     );
@@ -173,16 +198,36 @@ begin
 		o_pb       => open
 	);
 
-	s_pos_x <= (360 + 2 * to_integer(signed(s_horizontal_sync))) mod 720;
-	s_pos_y <= (240 + 2 * to_integer(signed(s_vertical_sync))) mod 480;
+	dpram0 : component dpram 
+	generic map (
+        mem_size   => h_res * v_res,
+        data_width => 1
+    )
+    port map (   
+        i_clk_a     => s_clk_27,
+        i_clk_b     => s_clk_27,
+
+        i_data_a    => "1",
+        i_data_b    => "0",
+        i_addr_a    => s_addr_a,
+        i_addr_b    => s_addr_b,
+        i_we_a      => '1',
+        i_we_b      => '0',
+        o_q_a       => open,
+        o_q_b       => s_q_b
+    );
 
 
+	s_pos_x <= (360 + to_integer(signed(s_horizontal_sync))) mod 720;
+	s_pos_y <= (240 + to_integer(signed(s_vertical_sync))) mod 480;
 
+	s_addr_a <= s_pos_y * h_res + s_pos_x;
+	
 
+	s_cursor <= '1' when (s_x_counter >= s_pos_x and s_x_counter < s_pos_x + pixel_size) and
+                     (s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
+            else '0';
 
-
-	o_hdmi_tx_d <= x"FFFFFF" when 	(s_x_counter >= s_pos_x and s_x_counter < s_pos_x + pixel_size) AND
-									(s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
-				else x"000000";
+	o_hdmi_tx_d <= x"FFFFFF" when (s_cursor = '1' or s_q_b = "1") else x"000000";
 
 end architecture rtl;
