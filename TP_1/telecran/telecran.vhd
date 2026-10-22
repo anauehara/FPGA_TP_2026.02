@@ -6,6 +6,7 @@ library pll;
 use pll.all;
 
 entity telecran is
+
     port (
         -- FPGA
         i_clk_50: in std_logic;
@@ -110,6 +111,8 @@ architecture rtl of telecran is
 	signal s_pos_x : natural range 0 to h_res - 1;
 	signal s_pos_y : natural range 0 to v_res - 1;
 
+	constant pixel_size : natural := 4;
+
 begin
 	o_leds <= (others => '0');
 	o_de10_leds <= (others => '0');
@@ -169,12 +172,17 @@ begin
 		o_position => s_vertical_sync(9 downto 0),
 		o_pb       => open
 	);
- 
 
-	s_pos_x <= (360 + to_integer(signed(s_horizontal_sync))) mod 720;
-	s_pos_y <= (240 + to_integer(signed(s_vertical_sync))) mod 480;
+	s_pos_x <= (360 + 2 * to_integer(signed(s_horizontal_sync))) mod 720;
+	s_pos_y <= (240 + 2 * to_integer(signed(s_vertical_sync))) mod 480;
 
 
-	o_hdmi_tx_d <= x"FFFFFF" when (s_pos_x = s_x_counter) AND (s_pos_y = s_y_counter) else x"000000";
+
+
+
+
+	o_hdmi_tx_d <= x"FFFFFF" when 	(s_x_counter >= s_pos_x and s_x_counter < s_pos_x + pixel_size) AND
+									(s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
+				else x"000000";
 
 end architecture rtl;
