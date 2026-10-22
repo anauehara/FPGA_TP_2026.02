@@ -20,11 +20,21 @@ end entity encoder;
 
 architecture rtl of encoder is
 
-    signal r_count  : natural range 0 to DEBOUNCE_TIME - 1 := 0;
-    signal r_enable : std_logic := '0';
+    component debounce is
+        generic (
+            DEBOUNCE_TIME : positive := 100000
+        );
+        port (
+            i_clk    : in  std_logic;
+            i_rst_n  : in  std_logic;
+            i_btn    : in  std_logic;
+            o_btn_db : out std_logic
+        );
+    end component;
 
-    signal r_a_sync : std_logic := '0';
-    signal r_b_sync : std_logic := '0';
+    signal s_a_db  : std_logic;
+    signal s_b_db  : std_logic;
+    signal s_pb_db : std_logic;
 
     signal r_a1 : std_logic := '0';
     signal r_a2 : std_logic := '0';
@@ -37,44 +47,45 @@ architecture rtl of encoder is
     signal s_falling_b : std_logic;
 
     signal r_position : signed(register_size - 1 downto 0) := (others => '0');
-
-    signal s_pb_sync : std_logic := '0';
 begin
 
-    process(i_clk, i_rst_n)
-    begin
-        if (i_rst_n = '0') then
-            r_count  <= 0;
-            r_enable <= '0';
-        elsif rising_edge(i_clk) then
-            if (r_count = DEBOUNCE_TIME - 1) then
-                r_count  <= 0;
-                r_enable <= '1';
-            else
-                r_count  <= r_count + 1;
-                r_enable <= '0';
-            end if;
-        end if;
-    end process;
+    debounce_a : component debounce
+        generic map (DEBOUNCE_TIME => DEBOUNCE_TIME)
+        port map (
+            i_clk    => i_clk,
+            i_rst_n  => i_rst_n,
+            i_btn    => i_a,
+            o_btn_db => s_a_db
+        );
+
+    debounce_b : component debounce
+        generic map (DEBOUNCE_TIME => DEBOUNCE_TIME)
+        port map (
+            i_clk    => i_clk,
+            i_rst_n  => i_rst_n,
+            i_btn    => i_b,
+            o_btn_db => s_b_db
+        );
+
+    debounce_pb : component debounce
+        generic map (DEBOUNCE_TIME => DEBOUNCE_TIME)
+        port map (
+            i_clk    => i_clk,
+            i_rst_n  => i_rst_n,
+            i_btn    => i_pb,
+            o_btn_db => s_pb_db
+        );
 
     process(i_clk, i_rst_n)
     begin
         if (i_rst_n = '0') then
-            r_a_sync <= '0';
-            r_b_sync <= '0';
-
             r_a1 <= '0';
             r_a2 <= '0';
             r_b1 <= '0';
             r_b2 <= '0';
         elsif rising_edge(i_clk) then
-            r_a_sync <= i_a;
-            r_b_sync <= i_b;
-
-            if (r_enable = '1') then
-                r_a1 <= r_a_sync;
-                r_b1 <= r_b_sync;
-            end if;
+            r_a1 <= s_a_db;
+            r_b1 <= s_b_db;
 
             r_a2 <= r_a1;
             r_b2 <= r_b1;
@@ -99,18 +110,7 @@ begin
         end if;
     end process;
 
-    process(i_clk, i_rst_n)
-    begin
-        if (i_rst_n = '0') then
-            s_pb_sync <= '0';
-        elsif rising_edge(i_clk) then
-            s_pb_sync <= i_pb;
-        end if;
-    end process;
-
-    --adicionar de bounce tbm para o pb
-
-    o_pb <= s_pb_sync;
+    o_pb <= s_pb_db;
 
     o_position <= std_logic_vector(r_position);
 
