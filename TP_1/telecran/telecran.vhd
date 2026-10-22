@@ -106,7 +106,7 @@ begin
 			I2C_SCLK => io_hdmi_i2c_scl,
 			I2C_SDAT => io_hdmi_i2c_sda,
 			HDMI_TX_INT => i_hdmi_tx_int
-	 );
+	);
 
 	hdmi_controler0 : component hdmi_controler
     port map (
