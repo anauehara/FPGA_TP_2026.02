@@ -150,7 +150,7 @@ architecture rtl of telecran is
 
 	signal s_pen : std_logic := '1';
 
-	signal s_color : std_logic_vector(23 downto 0) := x"FFFFFF";
+	signal s_color : signed(23 downto 0) := (others => '1');
 	signal s_color_control: std_logic := '1';
 
 	signal s_we_a : std_logic := '1';
@@ -253,7 +253,7 @@ begin
 			controler := '0';
 			v_prev := '1';
 			s_we_a <= '0';
-			s_pen <= '1';
+			
 		elsif rising_edge(s_clk_27) then
 			if (s_reset_n = '0' and v_prev = '1') then
 				controler := '1';
@@ -281,14 +281,14 @@ begin
 	variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
 	begin
 		if(i_rst_n = '0') then
-			s_color <= x"FFFFFF";
+			s_color <= s_color <= (others => '1');
 			last_horizontal_sync := (others => '0');
 			pulses := (others => '0');
 		elsif rising_edge(s_clk_27) then
 		pulses := signed(s_horizontal_sync) - last_horizontal_sync;
         last_horizontal_sync := signed(s_horizontal_sync);
 
-			if (color_control = '1') then
+			if (s_color_control = '1') then
 				s_color <= s_color + pulses;
 			end if;
 		end if;
@@ -302,6 +302,7 @@ begin
 			s_color_control <= '1';
 			s_pb_left_prev <= '0';
 			s_pb_right_prev <= '0';
+			s_pen <= '1';
 		elsif rising_edge(s_clk_27) then
 			s_pb_left_prev <= s_pb_left;
 
@@ -325,6 +326,6 @@ begin
                     		(s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
             else '0';
 
-	o_hdmi_tx_d <= s_color when (s_cursor = '1' or s_q_b = "1") else x"000000";
+	o_hdmi_tx_d <= std_logic_vector(s_color) when (s_cursor = '1' or s_q_b = "1") else x"000000";
 
 end architecture rtl;
