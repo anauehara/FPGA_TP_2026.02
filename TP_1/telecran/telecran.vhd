@@ -277,23 +277,23 @@ begin
 	end process;
 
 	process(s_clk_27, i_rst_n)
-	variable pulses : signed(15 downto 0) := (others => '0');
-	variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
-	begin
-		if(i_rst_n = '0') then
-			s_color <= (others => '1');
-			last_horizontal_sync := (others => '0');
-			pulses := (others => '0');
-		elsif rising_edge(s_clk_27) then
-		pulses := signed(s_horizontal_sync) - last_horizontal_sync;
+    variable pulses : integer := 0;
+    variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
+begin
+    if (i_rst_n = '0') then
+        s_color <= (others => '1');
+        last_horizontal_sync := (others => '0');
+        pulses := 0;
+    elsif rising_edge(s_clk_27) then
+        pulses := to_integer(signed(s_horizontal_sync) - last_horizontal_sync);
         last_horizontal_sync := signed(s_horizontal_sync);
 
-			if (s_color_control = '1') then
-				s_color <= s_color + pulses* 728887;
-			end if;
-		end if;
-		
-	end process;
+        if (s_color_control = '1') then
+            s_color <= s_color + pulses * 728887;
+        end if;
+    end if;
+end process;
+
 
 	
 	process(s_clk_27, i_rst_n)
