@@ -281,7 +281,7 @@ begin
 	variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
 	begin
 		if(i_rst_n = '0') then
-			s_color <= s_color <= (others => '1');
+			s_color <= (others => '1');
 			last_horizontal_sync := (others => '0');
 			pulses := (others => '0');
 		elsif rising_edge(s_clk_27) then
