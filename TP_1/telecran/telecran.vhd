@@ -107,7 +107,7 @@ architecture rtl of telecran is
 		i_data_b    : in std_logic_vector(data_width-1 downto 0);
 		i_addr_a    : in natural range 0 to mem_size-1;
 		i_addr_b    : in natural range 0 to mem_size-1;
-		i_we_a      : in std_logic := '1';
+		i_we_a      : in std_logic;
 		i_we_b      : in std_logic := '1';
 		o_q_a       : out std_logic_vector(data_width-1 downto 0);
 		o_q_b       : out std_logic_vector(data_width-1 downto 0)
@@ -140,9 +140,20 @@ architecture rtl of telecran is
 	signal s_reset_n : std_logic := '1';
 
 	signal s_pb_left : std_logic;
+	signal s_pb_left_prev : std_logic := '0';
+
 	signal s_pb_right : std_logic;
+	signal s_pb_right_prev : std_logic := '0';
+
 
 	signal valor : std_logic_vector(0 downto 0) := "1";
+
+	signal s_pen : std_logic := '1';
+
+	signal s_color : std_logic_vector(23 downto 0) := x"FFFFFF";
+	signal s_color_control: std_logic := '1';
+
+	signal s_we_a : std_logic := '1';
 
 begin
 	o_leds <= s_horizontal_sync(9 downto 0);
@@ -218,7 +229,7 @@ begin
         i_data_b    => "0",
         i_addr_a    => s_addr_a,
         i_addr_b    => s_addr_b,
-        i_we_a      => '1',
+        i_we_a      => s_we_a,
         i_we_b      => '0',
         o_q_a       => open,
         o_q_b       => s_q_b
@@ -241,12 +252,15 @@ begin
 			v_addr_a := 0;
 			controler := '0';
 			v_prev := '1';
+			s_we_a <= '0';
+			s_pen <= '1';
 		elsif rising_edge(s_clk_27) then
 			if (s_reset_n = '0' and v_prev = '1') then
 				controler := '1';
 			elsif (controler = '1') then
 				s_addr_a <= v_addr_a;
 				valor <= "0";
+				s_we_a <= '1';
 				if (v_addr_a = h_res * v_res - 1) then
 					controler := '0';
 				end if;
@@ -254,12 +268,55 @@ begin
 			else
 				s_addr_a <= s_pos_y * h_res + s_pos_x;
 				valor <= "1";
+				s_we_a <= s_pen;
 			end if;
 
 			
 			v_prev := s_reset_n;
 		end if;
 	end process;
+
+	process(s_clk_27, i_rst_n)
+	variable pulses : signed(15 downto 0) := (others => '0');
+	variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
+	begin
+		if(i_rst_n = '0') then
+			s_color <= x"FFFFFF";
+			last_horizontal_sync := (others => '0');
+			pulses := (others => '0');
+		elsif rising_edge(s_clk_27) then
+		pulses := signed(s_horizontal_sync) - last_horizontal_sync;
+        last_horizontal_sync := signed(s_horizontal_sync);
+
+			if (color_control = '1') then
+				s_color <= s_color + pulses;
+			end if;
+		end if;
+		
+	end process;
+
+	
+	process(s_clk_27, i_rst_n)
+	begin
+		if(i_rst_n = '0') then
+			s_color_control <= '1';
+			s_pb_left_prev <= '0';
+			s_pb_right_prev <= '0';
+		elsif rising_edge(s_clk_27) then
+			s_pb_left_prev <= s_pb_left;
+
+			if (s_pb_left = '0' and s_pb_left_prev = '1') then
+				s_color_control <= not(s_color_control);
+			end if;
+
+			s_pb_right_prev <= s_pb_right;
+
+			if (s_pb_right = '0' and s_pb_right_prev = '1') then
+				s_pen <= not(s_pen);
+			end if;
+		end if;
+	end process;
+
 
 	s_reset_n <= '0' when (s_pb_left = '1' or s_pb_right = '1') else '1';
 	
@@ -268,6 +325,6 @@ begin
                     		(s_y_counter >= s_pos_y and s_y_counter < s_pos_y + pixel_size)
             else '0';
 
-	o_hdmi_tx_d <= x"FFFFFF" when (s_cursor = '1' or s_q_b = "1") else x"000000";
+	o_hdmi_tx_d <= s_color when (s_cursor = '1' or s_q_b = "1") else x"000000";
 
 end architecture rtl;

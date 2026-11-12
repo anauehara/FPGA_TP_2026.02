@@ -16,7 +16,7 @@ entity dpram is
         i_data_b    : in std_logic_vector(data_width-1 downto 0);
         i_addr_a    : in natural range 0 to mem_size-1;
         i_addr_b    : in natural range 0 to mem_size-1;
-        i_we_a      : in std_logic := '1';
+        i_we_a      : in std_logic;
         i_we_b      : in std_logic := '1';
         o_q_a       : out std_logic_vector(data_width-1 downto 0);
         o_q_b       : out std_logic_vector(data_width-1 downto 0)
