@@ -289,7 +289,7 @@ begin
         last_horizontal_sync := signed(s_horizontal_sync);
 
 			if (s_color_control = '1') then
-				s_color <= s_color + pulses;
+				s_color <= s_color + pulses* 728887;
 			end if;
 		end if;
 		
