@@ -279,9 +279,6 @@ begin
 	process(s_clk_27, i_rst_n)
     variable pulses : integer := 0;
     variable last_horizontal_sync : signed(15 downto 0) := (others => '0');
-    variable color_blue  : integer := 255;
-    variable color_green : integer := 255;
-    variable color_red   : integer := 255;
 	begin
 		if (i_rst_n = '0') then
 			s_color <= (others => '1');
@@ -292,11 +289,9 @@ begin
 			last_horizontal_sync := signed(s_horizontal_sync);
 
 			if (s_color_control = '1') then
-				color_blue  := (to_integer(unsigned(s_color(7 downto 0)))   + pulses) mod 256;
-				color_green := (to_integer(unsigned(s_color(15 downto 8)))  + pulses) mod 256;
-				color_red   := (to_integer(unsigned(s_color(23 downto 16))) + pulses) mod 256;
-
-				s_color <= signed(to_unsigned(color_red, 8) & to_unsigned(color_green, 8) & to_unsigned(color_blue, 8));
+				s_color <= (s_color(23 downto 16) + pulses) &
+						(s_color(15 downto 8)  + pulses) &
+						(s_color(7 downto 0)   + pulses);
 			end if;
 		end if;
 	end process;

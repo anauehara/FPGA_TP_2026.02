@@ -5,34 +5,39 @@ if {[file exists work]} {
 }
 vlib work
 
+# debounce first: the encoder instantiates it
+vcom debounce.vhdl
 vcom encoder.vhdl
 vcom encoder_tb.vhdl
 
 vsim -t 1ns work.encoder_tb
 
-add wave -divider Inputs:
-add wave -color yellow uut/i_clk
-add wave -color yellow uut/i_rst_n
-add wave -color yellow uut/i_a
-add wave -color yellow uut/i_b
+# show only the signal name, not the whole hierarchy path
+configure wave -signalnamewidth 1
 
-add wave -divider Internal:
-add wave -radix unsigned uut/r_count
-add wave uut/r_enable
-add wave uut/r_a_sync
-add wave uut/r_b_sync
-add wave uut/r_a1
-add wave uut/r_a2
-add wave uut/r_b1
-add wave uut/r_b2
-add wave uut/s_rising_a
-add wave uut/s_falling_a
-add wave uut/s_rising_b
-add wave uut/s_falling_b
-add wave -radix decimal uut/r_position
+# Signals keep the names they have in encoder.vhdl.
+# Yellow = raw input (with bounce), pink = clean output.
+add wave -divider Clock
+add wave -color yellow /encoder_tb/uut/i_clk
 
-add wave -divider Outputs:
-add wave -color green -radix decimal uut/o_position
+add wave -divider Reset
+add wave -color yellow /encoder_tb/uut/i_rst_n
 
-run 23000 ns
-# adjust the run length above to whatever actually exercises this module's behavior
+add wave -divider {Channel A}
+add wave -color yellow /encoder_tb/uut/i_a
+add wave -color pink /encoder_tb/uut/s_a_db
+
+add wave -divider {Channel B}
+add wave -color yellow /encoder_tb/uut/i_b
+add wave -color pink /encoder_tb/uut/s_b_db
+
+add wave -divider Button
+add wave -color yellow /encoder_tb/uut/i_pb
+add wave -color pink /encoder_tb/uut/o_pb
+
+add wave -divider Position
+add wave -color pink -radix decimal /encoder_tb/uut/o_position
+
+run 10500 ns
+wave zoom full
+# the testbench finishes at about 10300 ns; adjust if STEP or N_TURNS change

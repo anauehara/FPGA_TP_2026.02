@@ -13,6 +13,8 @@ architecture sim of hdmi_controler_tb is
 	constant v_sync : positive := 5;
 	constant v_fp   : positive := 30;
 	constant v_bp   : positive := 9;
+	-- 27 MHz: periodo de 37.036 ns (meio periodo = 18518 ps), usar vsim -t 1ps
+	constant CLK_HALF : time := 18518 ps;
 
 	signal clk           : std_logic := '0';
 	signal rst_n         : std_logic := '0';
@@ -50,7 +52,7 @@ begin
 	clk_process: process
 	begin
 		clk <= not clk;
-		wait for 5 ns;
+		wait for CLK_HALF;
 	end process;
 
 	stim_proc: process
